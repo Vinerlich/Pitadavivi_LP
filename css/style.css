@@ -1,0 +1,345 @@
+/* Paleta de Cores Fiel ao Seu Banner e Print */
+:root {
+    --bg-color: #FAF6ED;
+    --card-bg: #ffffff;
+    --primary-yellow: #EABB33;  /* Amarelo mostarda quente do seu logo */
+    --accent-orange: #E37C22;  /* Laranja dos botões "Encomendar" */
+    --dark-brown: #3C2415;     /* Marrom do título e textos */
+    --text-muted: #7E6E65;
+    --border-color: #E6DFD3;
+    --notice-border: #D96B27;
+    --notice-bg: #FFFDF9;
+    --shadow: 0 6px 20px rgba(60, 36, 21, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-brown);
+}
+
+/* BANNER UNIFICADO PERFEITO */
+.brand-banner {
+    width: 100%;
+    height: 140px; /* Altura ideal do banner */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.main-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem do logo cobrir toda a largura da tela de ponta a ponta perfeitamente */
+    display: block;
+}
+
+/* NAVBAR COM SEUS BOTÕES ARREDONDADOS FLUTUANTES */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 12px 0;
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Estilo Pílula Oval do seu Menu Original */
+.nav-pill {
+    text-decoration: none;
+    color: var(--dark-brown);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 6px 16px;
+    border: 1px solid var(--dark-brown);
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.nav-pill:hover {
+    background-color: var(--dark-brown);
+    color: #ffffff;
+}
+
+/* Widget Superior de Carrinho */
+.cart-status-pill {
+    background-color: var(--accent-orange);
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(227, 124, 34, 0.2);
+}
+
+/* CONTEÚDO */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Caixa de Alerta Laranja do seu Print */
+.important-notice {
+    background-color: var(--notice-bg);
+    border-left: 4px solid var(--notice-border);
+    padding: 16px 20px;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* FILTROS BADGES COM EMOJIS */
+.category-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 45px;
+}
+
+.badge-btn {
+    background: #ffffff;
+    color: var(--dark-brown);
+    border: 1px solid var(--border-color);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: all 0.2s;
+}
+
+.badge-btn:hover, .badge-btn.active {
+    background-color: #FFF2D4;
+    border-color: var(--primary-yellow);
+    transform: translateY(-1px);
+}
+
+/* DIVISOR DE SEÇÃO EXCLUSIVO */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.section-divider h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--dark-brown);
+    font-weight: 700;
+}
+
+.decor {
+    color: var(--dark-brown);
+    font-size: 24px;
+}
+
+.category-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+/* VITRINE IGUAL AO SEU DESIGN */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo das Tags ("Pitada de Amor" / "Pitada Quentinha") */
+.product-tag {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background-color: #E34A6F;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.product-tag.quentinha {
+    background-color: #D9531E;
+}
+
+.product-img-wrapper {
+    width: 100%;
+    height: 180px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+    min-height: 36px;
+}
+
+.product-management {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.product-card .price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2BA662; /* Verde idêntico ao preço do seu print */
+}
+
+/* Input Seletor de Quantidade do seu layout */
+.qty-input {
+    width: 45px;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Botão Encomendar Laranja */
+.btn-order-action {
+    width: 100%;
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-order-action:hover {
+    background-color: #c76516;
+}
+
+/* ÁREA DE CHECKOUT */
+.checkout-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .checkout-section { grid-template-columns: 1fr; }
+}
+
+.checkout-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.checkout-card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-yellow);
+}
+
+.cart-list { list-style: none; }
+.cart-item { display: flex; justify-content: space-between; font-size: 14px; padding: 10px 0; border-bottom: 1px solid #FAF6ED; }
+.empty-cart { color: var(--text-muted); font-style: italic; text-align: center; padding: 15px 0; }
+.cart-total { display: flex; justify-content: space-between; font-weight: 700; padding-top: 15px; }
+.cart-total.final { font-size: 20px; color: var(--dark-brown); margin-bottom: 20px; }
+
+.form-group { margin-bottom: 18px; }
+label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+input[type="text"], input[type="date"] { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; }
+.input-wrapper { display: flex; gap: 8px; }
+.btn-calc { background: var(--dark-brown); color: white; border: none; padding: 0 16px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+
+.result-box { display: none; padding: 15px; border-radius: 6px; font-size: 13px; line-height: 1.5; margin-bottom: 20px; }
+.result-box.loading { display: block; background: #f5f3f0; color: var(--text-muted); text-align: center; }
+.result-box.success { display: block; background: #f2f7f0; border: 1px solid #d4e3cf; }
+.result-box.error { display: block; background: #fdf2f2; border: 1px solid #f7dddd; color: var(--error-text); }
+.btn-checkout-final { width: 100%; background: var(--dark-brown); color: white; border: none; padding: 14px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; }
+
+/* WHATSAPP FIXO ICON */
+.whatsapp-sticky {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+.main-footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 12px; }

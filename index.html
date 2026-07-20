@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitadavivi | Delícias Artesanais</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- BANNER TOPO -->
+    <div class="brand-banner">
+        <img src="./img/Logo.png" alt="Pitadavivi Delícias Artesanais" class="main-logo-img">
+    </div>
+
+    <!-- HEADER COM NAVBAR (MENU DE PÍLULAS) -->
+    <header class="main-header">
+        <div class="header-container">
+            <nav class="navigation">
+                <a href="#produtos" class="nav-pill">GELEIAS</a>
+                <a href="#produtos" class="nav-pill">ANTEPASTOS</a>
+                <a href="#produtos" class="nav-pill">SOBREMESAS</a>
+                <a href="#produtos" class="nav-pill">BOLOS</a>
+                <a href="#produtos" class="nav-pill">PÃES</a>
+                <a href="#produtos" class="nav-pill">TORTAS</a>
+                <a href="#produtos" class="nav-pill">SAZONAIS ▾</a>
+                <a href="#checkout" class="nav-pill">DEPOIMENTOS</a>
+            </nav>
+            <div class="cart-status-pill">
+                🛒 <span id="top-cart-count">0 itens</span> | <span id="top-cart-total">R$ 0,00</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        
+        <!-- AVISO IMPORTANTE -->
+        <div class="important-notice">
+            <p>🍞 <strong>Aviso importante: Trabalhamos exclusivamente sob encomenda!</strong></p>
+            <p>Todos os nossos produtos são produzidos artesanalmente para a data do seu evento. Garanta sua delícia artesanal com antecedência!</p>
+        </div>
+
+        <!-- SEÇÃO DE PRODUTOS (10 CATEGORIAS EM CARDS LIMPOS EM ORDEM ALFABÉTICA) -->
+        <section id="produtos" class="products-section">
+            <div class="section-divider">
+                <span class="decor">❧</span>
+                <h2>Nossas Categorias</h2>
+                <span class="decor">☙</span>
+            </div>
+            <p class="category-subtitle">Escolha uma categoria abaixo para explorar os sabores disponíveis</p>
+            
+            <div class="products-grid">
+                
+                <!-- 1. Antepastos -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=500&q=80" alt="Antepastos" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Antepastos</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Combinações marcantes e conservas equilibradas.</p>
+                        <button class="btn-order-action" onclick="abrirModal('antepastos')">Ver Opções</button>
+                    </div>
+                </div>
+
+                <!-- 2. Bolos de Festa -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&w=500&q=80" alt="Bolos" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Bolos de Festa</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Massas fofinhas e recheios generosos para celebrar.</p>
+                        <button class="btn-order-action" onclick="abrirModal('bolos')">Ver Sabores</button>
+                    </div>
+                </div>
+
+                <!-- 3. Caseirinhos -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=500&q=80" alt="Caseirinhos" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Caseirinhos</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Bolos caseiros perfeitos para acompanhar um bom café.</p>
+                        <button class="btn-order-action" onclick="abrirModal('caseirinhos')">Ver Sabores</button>
+                    </div>
+                </div>
+
+                <!-- 4. Docinhos -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=500&q=80" alt="Docinhos" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Docinhos</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Clássicos e gourmets enrolados artesanalmente com amor.</p>
+                        <button class="btn-order-action" onclick="abrirModal('docinhos')">Ver Sabores</button>
+                    </div>
+                </div>
+
+                <!-- 5. Geleias -->
+                <div class="product-card">
+                    <span class="product-tag">Pitada de Amor</span>
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=500&q=80" alt="Geleias" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Geleias</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Frutas selecionadas e doçura na medida exata.</p>
+                        <button class="btn-order-action" onclick="abrirModal('geleias')">Ver Sabores</button>
+                    </div>
+                </div>
+
+                <!-- 6. Kits -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1549417229-aa67d3263c09?auto=format&fit=crop&w=500&q=80" alt="Kits" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Kits & Presentes</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Seleções especiais combinadas para momentos felizes.</p>
+                        <button class="btn-order-action" onclick="abrirModal('kits')">Ver Combos</button>
+                    </div>
+                </div>
+
+                <!-- 7. Pães Doces -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" alt="Pães Doces" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Pães Doces</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Massas leves e tranças recheadas delicadamente.</p>
+                        <button class="btn-order-action" onclick="abrirModal('paes-doces')">Ver Opções</button>
+                    </div>
+                </div>
+
+                <!-- 8. Pães Salgados -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=500&q=80" alt="Pães Salgados" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Pães Salgados</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Pães artesanais de fermentação natural (Sourdough).</p>
+                        <button class="btn-order-action" onclick="abrirModal('paes-salgados')">Ver Opções</button>
+                    </div>
+                </div>
+
+                <!-- 9. Tortas Doces -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500&q=80" alt="Tortas Doces" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Tortas Doces</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Sobremesas sofisticadas e tortas bem recheadas.</p>
+                        <button class="btn-order-action" onclick="abrirModal('tortas-doces')">Ver Sabores</button>
+                    </div>
+                </div>
+
+                <!-- 10. Tortas Salgadas -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=500&q=80" alt="Tortas Salgadas" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h4>Tortas Salgadas</h4>
+                        <p style="font-size: 13px; text-align: center; color: var(--text-muted); margin-bottom: 15px;">Tortas salgadas e quiches com tempero único.</p>
+                        <button class="btn-order-action" onclick="abrirModal('tortas-salgadas')">Ver Opções</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE CHECKOUT COMPACTA -->
+        <section id="checkout" class="checkout-section">
+            <div class="checkout-card">
+                <h3>🛒 Seu Carrinho</h3>
+                <ul id="carrinho-itens" class="cart-list">
+                    <li class="empty-cart">Seu carrinho está vazio.</li>
+                </ul>
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <span id="subtotal-valor">R$ 0,00</span>
+                </div>
+            </div>
+
+            <div class="checkout-card">
+                <h3>📅 Agendamento & Entrega</h3>
+                <div class="form-group">
+                    <label for="delivery-date">Data de Entrega (Mínimo 72h de antecedência)</label>
+                    <input type="date" id="delivery-date">
+                </div>
+                <div class="form-group">
+                    <label for="postal-code">CEP de Destino</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="postal-code" placeholder="00000-000" maxlength="9">
+                        <button class="btn-calc" onclick="calcularFreteEDirecionar()">Calcular</button>
+                    </div>
+                </div>
+                <div id="api-result" class="result-box"></div>
+                <div class="checkout-actions">
+                    <div class="cart-total final">
+                        <span>Total Geral:</span>
+                        <span id="total-geral">R$ 0,00</span>
+                    </div>
+                    <button class="btn-checkout-final" onclick="finalizarPedidoCompleto()">Confirmar e Encomendar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JANELA POP-UP (MODAL) QUE ABRE COM OS SABORES -->
+    <div id="modal-sabores" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="fecharModal()">&times;</button>
+            <h3 id="modal-titulo-categoria">Sabores Disponíveis</h3>
+            <div id="modal-lista-sabores" class="modal-flavors-grid">
+                <!-- Injetado dinamicamente via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO FIXO WHATSAPP -->
+    <a href="https://wa.me/seu-numero" class="whatsapp-sticky" target="_blank">
+        <svg viewBox="0 0 24 24" fill="white" width="30" height="30">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.73-1.451L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.528 2.017 14.077 1 11.47 1c-5.44 0-9.866 4.372-9.87 9.802 0 1.714.463 3.39 1.34 4.875l-.102.373-1.01 3.689 3.777-.981.353.206zm13.434-7.51c-.302-.15-1.788-.882-2.057-.979-.268-.1-.463-.15-.658.15-.195.3-.75.942-.921 1.137-.17.195-.34.22-.642.07-1.433-.715-2.456-1.175-3.426-2.832-.252-.43-.07-.663.08-.812.136-.132.302-.351.453-.526.15-.174.2-.3.302-.5.101-.2.051-.375-.025-.526-.075-.15-.658-1.583-.901-2.167-.236-.57-.478-.49-.658-.5-.164-.008-.352-.01-.54-.01-.19 0-.498.07-.76.35-.262.288-1.002.98-1.002 2.39 0 1.41 1.028 2.77 1.171 2.964.143.195 2.024 3.09 4.901 4.33 2.15.927 2.934.743 3.477.632.544-.112 1.788-.732 2.039-1.44c.252-.707.252-1.314.177-1.44-.075-.125-.269-.199-.57-.348z"/>
+        </svg>
+    </a>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Pitadavivi - Delícias Artesanais. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
