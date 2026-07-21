@@ -1,106 +1,73 @@
-// ==========================================
-// BANCO DE DADOS EM ORDEM ALFABÉTICA COM SABORES INTERNOS
-// ==========================================
-const bancoProdutosModal = {
-    antepastos: {
-        titulo: "Antepastos da Casa",
-        itens: [
-            { id: 4, nome: "Caponata de Berinjela", preco: 26.00, tag: "Artesanal", desc: "Com uvas passas, castanhas e azeite extra virgem.", foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" }
-        ]
-    },
-    bolos: {
-        titulo: "Bolos de Festa",
-        itens: [
-            { id: 5, nome: "Bolo de Festa Red Velvet", preco: 85.00, tag: "Pitada de Amor", desc: "Massa aveludada vermelha com recheio cremoso de cream cheese.", foto: "https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&w=150&q=80" }
-        ]
-    },
-    caseirinhos: {
-        titulo: "Caseirinhos Especiais",
-        itens: [
-            { id: 6, nome: "Bolo de Cenoura Vulcão", preco: 28.00, tag: "Mais Pedido", desc: "Tradicional bolo fofinho com cobertura generosa de brigadeiro.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" }
-        ]
-    },
-    docinhos: {
-        titulo: "Docinhos Finos",
-        itens: [
-            { id: 7, nome: "Brigadeiro Gourmet (Unidade)", preco: 4.50, tag: "Gourmet", desc: "Feito com chocolate belga 54% cacau.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" }
-        ]
-    },
-    geleias: {
-        titulo: "Geleias Artesanais",
-        itens: [
-            { id: 1, nome: "Geleia de Amora com manjericão", preco: 18.50, tag: "Pitada de Amor", desc: "Pedaços frescos de amora silvestre e toque sutil de manjericão.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-            { id: 2, nome: "Geleia de Damasco Artesanal", preco: 22.00, tag: "Pitada de Amor", desc: "Textura cremosa e pedaços marcantes de damasco selecionado.", foto: "https://images.unsplash.com/photo-1622484211148-7163014a706b?auto=format&fit=crop&w=150&q=80" },
-            { id: 3, nome: "Geleia de Pimenta Premium", preco: 24.50, tag: "Pitada Quentinha", desc: "Equilíbrio perfeito de ardência média e doçura.", foto: "https://images.unsplash.com/photo-1589135061613-7924ef9ff715?auto=format&fit=crop&w=150&q=80" }
-        ]
-    },
-    kits: {
-        titulo: "Kits & Presentes",
-        itens: [
-            { id: 8, nome: "Kit Café da Manhã Completo", preco: 95.00, tag: "Especial", desc: "Acompanha 1 Pão, 1 Geleia da sua escolha e 1 Caseirinho pequeno.", foto: "https://images.unsplash.com/photo-1549417229-aa67d3263c09?auto=format&fit=crop&w=150&q=80" }
-        ]
-    },
-    "paes-doces": { titulo: "Pães Doces", itens: [] },
-    "paes-salgados": {
-        titulo: "Pães de Fermentação Natural",
-        itens: [
-            { id: 9, nome: "Pão Campanha Sourdough", preco: 24.00, tag: "Sourdough", desc: "Fermentação lenta de 36 horas, miolo aerado e casca rústica.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" }
-        ]
-    },
-    "tortas-doces": { titulo: "Tortas Doces", itens: [] },
-    "tortas-salgadas": { titulo: "Tortas Salgadas", itens: [] }
+// BANCO DE DADOS EM ORDEM ALFABÉTICA
+const bancoSabores = {
+    antepastos: [
+        { nome: "Caponata de Berinjela", preco: 26.00, desc: "Com uvas passas, castanhas e azeite extra virgem.", foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" }
+    ],
+    bolos: [
+        { nome: "Bolo de Cenoura com Brigadeiro", preco: 28.00, desc: "Tradicional bolo caseiro com cobertura vulcão.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Bolo de Festa Red Velvet", preco: 85.00, desc: "Massa aveludada com recheio de cream cheese.", foto: "https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&w=150&q=80" }
+    ],
+    docinhos: [
+        { nome: "Brigadeiro Gourmet (Unidade)", preco: 4.50, desc: "Chocolate belga 54% cacau granulado puro.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Beijinho Artesanal (Unidade)", preco: 4.00, desc: "Cremosidade de coco com cravo da índia.", foto: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=150&q=80" }
+    ],
+    geleias: [
+        { nome: "Geleia de Frutas Vermelhas", preco: 22.50, desc: "Pedaços de morango, amora e framboesa.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Geleia de Damasco com Pimenta", preco: 24.00, desc: "Agridoce marcante, perfeita para queijos.", foto: "https://images.unsplash.com/photo-1622484211148-7163014a706b?auto=format&fit=crop&w=150&q=80" }
+    ],
+    kits: [
+        { nome: "Kit Café da Manhã Completo", preco: 95.00, desc: "1 Pão, 1 Geleia, 1 Bolo Caseiro pequeno.", foto: "https://images.unsplash.com/photo-1549417229-aa67d3263c09?auto=format&fit=crop&w=150&q=80" }
+    ],
+    marmitas: [
+        { nome: "Nhoque de Mandioquinha ao Sugo", preco: 24.90, desc: "Ultracongelado, sabor de massa fresca.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" }
+    ],
+    paes: [
+        { nome: "Pão Campanha Sourdough", preco: 24.00, desc: "Fermentação natural de 36 horas.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Baguete Francesa Clássica", preco: 14.00, desc: "Crocância perfeita com miolo leve.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" }
+    ],
+    pets: [
+        { nome: "Biscoito Integral de Abóbora", preco: 14.00, desc: "Sem conservantes, saudável para cães.", foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" }
+    ],
+    sazonais: [
+        { nome: "Panetone Artesanal Trançado", preco: 65.00, desc: "Disponível apenas sob encomenda.", foto: "https://images.unsplash.com/photo-1512414472151-512c06cfb0b3?auto=format&fit=crop&w=150&q=80" }
+    ],
+    sobremesas: [
+        { nome: "Banoffee na Travessa", preco: 45.00, desc: "Doce de leite artesanal, bananas e chantilly.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" }
+    ]
 };
 
-// ==========================================
-// ESTADO GLOBAL DA APLICAÇÃO
-// ==========================================
-let carrinho = [];
-let valorFreteGlobal = 0;
-
-// INICIALIZAÇÃO DO SITE
-document.addEventListener("DOMContentLoaded", () => {
-    configurarCalendario72h();
-});
-
-// ==========================================
-// CONTROLE DO POP-UP (MODAL DE SABORES)
-// ==========================================
-function abrirModal(categoriaChave) {
+// CONTROLE DO MODAL FLUTUANTE
+function abrirModal(categoria) {
     const modal = document.getElementById('modal-sabores');
     const titulo = document.getElementById('modal-titulo-categoria');
     const lista = document.getElementById('modal-lista-sabores');
     
-    const categoria = bancoProdutosModal[categoriaChave] || { titulo: "Opções Disponíveis", itens: [] };
+    const titulosFormatados = {
+        antepastos: "Antepastos da Casa", bolos: "Bolos Caseiros & Festa", docinhos: "Docinhos Especiais",
+        geleias: "Geleias Artesanais", kits: "Kits & Presentes", marmitas: "Marmitas Congeladas",
+        paes: "Pães de Fermentação Natural", pets: "Linha Pet Saudável", sazonais: "Produtos Sazonais", 
+        sobremesas: "Sobremesas Finas"
+    };
 
-    titulo.innerText = categoria.titulo;
+    titulo.innerText = titulosFormatados[categoria] || "Opções Disponíveis";
     lista.innerHTML = '';
 
-    if (!categoria.itens || categoria.itens.length === 0) {
-        lista.innerHTML = "<p style='text-align: center; color: #7e6e65; font-style: italic; padding: 20px 0;'>Nenhum sabor cadastrado nesta categoria no momento.</p>";
-        modal.style.display = 'flex';
-        return;
-    }
-
-    // Injeta a linha de sabores com seletores numéricos individuais dentro do pop-up
-    categoria.itens.forEach(item => {
-        const tagClass = item.tag === "Pitada Quentinha" ? "product-tag quentinha" : "product-tag";
+    const sabores = bancoSabores[categoria] || [];
+    
+    sabores.forEach(sabor => {
         lista.innerHTML += `
-            <div class="flavor-item-row" style="position: relative; overflow: hidden;">
-                <img src="${item.foto}" alt="${item.nome}" class="flavor-mini-img">
+            <div class="flavor-item-row">
+                <img src="${sabor.foto}" alt="${sabor.nome}" class="flavor-mini-img">
                 <div class="flavor-details">
-                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 2px;">${item.nome}</h4>
-                    <p style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">${item.desc}</p>
-                    <span class="${tagClass}" style="position: static; font-size: 9px; padding: 2px 6px; margin-top: 5px; display: inline-block;">${item.tag}</span>
+                    <h4>${sabor.nome}</h4>
+                    <p>${sabor.desc}</p>
                 </div>
-                <div class="flavor-action" style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
-                    <span class="price" style="color: #2BA662; font-weight: 700; font-size: 15px;">R$ ${item.preco.toFixed(2).replace('.', ',')}</span>
-                    <div style="display: flex; gap: 6px; align-items: center;">
-                        <input type="number" id="modal-qty-${item.id}" class="qty-input" value="1" min="1" style="width: 40px; padding: 2px;">
-                        <button class="btn-order-action" style="padding: 6px 12px; font-size: 12px; border-radius: 4px;" 
-                            onclick="adicionarDoModal(${item.id}, '${item.nome}', ${item.preco})">
-                            + Carrinho
-                        </button>
-                    </div>
+                <div class="flavor-action">
+                    <span class="price">R$ ${sabor.preco.toFixed(2).replace('.', ',')}</span>
+                    <button class="btn-add" style="padding: 6px 12px; font-size: 12px;" 
+                        onclick="adicionarAoCarrinho('${sabor.nome}', ${sabor.preco}); fecharModal();">
+                        + Adicionar
+                    </button>
                 </div>
             </div>
         `;
@@ -113,7 +80,7 @@ function fecharModal() {
     document.getElementById('modal-sabores').style.display = 'none';
 }
 
-// Fecha o modal ao clicar fora do card branco
+// Fechar modal ao clicar fora da caixa branca
 window.onclick = function(event) {
     const modal = document.getElementById('modal-sabores');
     if (event.target == modal) {
@@ -121,39 +88,53 @@ window.onclick = function(event) {
     }
 }
 
-// CAPTURA QUANTIDADE E ADICIONA À SACOLA
-function adicionarDoModal(id, nome, preco) {
-    const qty = parseInt(document.getElementById(`modal-qty-${id}`).value) || 1;
+// ESTADO GLOBAL DA COMPRA
+let carrinho = [];
+let valorFreteGlobal = 0;
+
+// REGRA DE NEGÓCIO: BLOQUEAR CALENDÁRIO PARA 72H (3 DIAS) DE ANTECEDÊNCIA
+const dateInput = document.getElementById('delivery-date');
+if(dateInput) {
+    const dataMinima = new Date();
+    dataMinima.setDate(dataMinima.getDate() + 3);
+
+    const ano = dataMinima.getFullYear();
+    const mes = String(dataMinima.getMonth() + 1).padStart(2, '0');
+    const dia = String(dataMinima.getDate()).padStart(2, '0');
     
-    for(let i = 0; i < qty; i++) {
-        carrinho.push({ nome, preco });
+    dateInput.min = `${ano}-${mes}-${dia}`;
+}
+
+// Máscara Automática para o CEP
+document.getElementById('postal-code').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 5) {
+        value = value.substring(0, 5) + '-' + value.substring(5, 8);
     }
-    
-    fecharModal();
+    e.target.value = value;
+});
+
+// ADICIONAR ITENS AO CARRINHO
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
     atualizarInterfaceCarrinho();
 }
 
-// ==========================================
-// INTERFACE E RECALCULO DO CARRINHO
-// ==========================================
+// ATUALIZAR VALORES EM TELA
 function atualizarInterfaceCarrinho() {
     const listaHtml = document.getElementById('carrinho-itens');
     const subtotalHtml = document.getElementById('subtotal-valor');
     const totalGeralHtml = document.getElementById('total-geral');
     
-    document.getElementById('top-cart-count').innerText = `${carrinho.length} itens`;
-
     if (carrinho.length === 0) {
         listaHtml.innerHTML = '<li class="empty-cart">Seu carrinho está vazio.</li>';
         subtotalHtml.innerText = 'R$ 0,00';
-        document.getElementById('top-cart-total').innerText = 'R$ 0,00';
         totalGeralHtml.innerText = `R$ ${valorFreteGlobal.toFixed(2).replace('.', ',')}`;
         return;
     }
 
     listaHtml.innerHTML = '';
     let subtotal = 0;
-    
     carrinho.forEach(item => {
         subtotal += item.preco;
         listaHtml.innerHTML += `
@@ -165,38 +146,11 @@ function atualizarInterfaceCarrinho() {
     });
 
     subtotalHtml.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-    document.getElementById('top-cart-total').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-    
     let totalGeral = subtotal + valorFreteGlobal;
     totalGeralHtml.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
 }
 
-// ==========================================
-// REGRAS DE NEGÓCIO: CALENDÁRIO & CEP
-// ==========================================
-function configurarCalendario72h() {
-    const dateInput = document.getElementById('delivery-date');
-    if (dateInput) {
-        const dataMinima = new Date();
-        dataMinima.setDate(dataMinima.getDate() + 3);
-
-        const ano = dataMinima.getFullYear();
-        const mes = String(dataMinima.getMonth() + 1).padStart(2, '0');
-        const dia = String(dataMinima.getDate()).padStart(2, '0');
-        
-        dateInput.min = `${ano}-${mes}-${dia}`;
-    }
-}
-
-document.getElementById('postal-code').addEventListener('input', function (e) {
-    let value = e.target.value.replace(/\D/g, '');
-    if (value.length > 5) {
-        value = value.substring(0, 5) + '-' + value.substring(5, 8);
-    }
-    e.target.value = value;
-});
-
-// FRETE CONECTADO À API EM .NET
+// CHAMADA POST CONECTADA DIRETAMENTE À SUA API .NET C#
 async function calcularFreteEDirecionar() {
     const inputElement = document.getElementById('postal-code');
     const resultDiv = document.getElementById('api-result');
@@ -204,15 +158,17 @@ async function calcularFreteEDirecionar() {
 
     if (!cepLimpo || cepLimpo.length !== 8) {
         resultDiv.className = "result-box error";
-        resultDiv.innerHTML = "<strong>Erro:</strong> Digite um CEP com 8 dígitos.";
+        resultDiv.innerHTML = "<strong>Erro:</strong> Digite um CEP com 8 números.";
         return;
     }
 
     resultDiv.className = "result-box loading";
-    resultDiv.innerHTML = "<em>Mapeando frete na API Pitadavivi...</em>";
+    resultDiv.innerHTML = "<em>Consultando rota e valores na API Pitadavivi...</em>";
+
+    const API_URL = "http://localhost:5253/api/frete"; 
 
     try {
-        const response = await fetch("http://localhost:5253/api/frete", {
+        const response = await fetch(API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ cepDestino: cepLimpo })
@@ -223,33 +179,48 @@ async function calcularFreteEDirecionar() {
         if (!response.ok) {
             valorFreteGlobal = 0;
             resultDiv.className = "result-box error";
-            resultDiv.innerHTML = `<strong>Aviso:</strong> ${data.mensagem}`;
+            resultDiv.innerHTML = `<strong>Bloqueio de Entrega:</strong> ${data.mensagem}`;
             atualizarInterfaceCarrinho();
             return;
         }
 
         valorFreteGlobal = data.valorFrete;
+        
         resultDiv.className = "result-box success";
         resultDiv.innerHTML = `
-            <strong>✓ Rota Atendida!</strong><br>
-            📍 Região: ${data.logradouroDestino || 'Rua'}, ${data.bairroDestino}<br>
+            <strong>✓ Rota Mapeada!</strong><br>
+            📍 Região: ${data.logradouroDestino || 'Logradouro'}, ${data.bairroDestino}<br>
             🏙️ Cidade: ${data.cidadeDestino} - SP<br>
+            🛣️ Distância Real: ${data.distanciaKm} km<br>
             💰 Taxa de Entrega: R$ ${data.valorFrete.toFixed(2).replace('.', ',')}
         `;
+
         atualizarInterfaceCarrinho();
+
     } catch (err) {
         valorFreteGlobal = 0;
         resultDiv.className = "result-box error";
-        resultDiv.innerHTML = "<strong>Erro:</strong> Não foi possível conectar ao seu backend local .NET.";
+        resultDiv.innerHTML = "<strong>Erro:</strong> Não foi possível se conectar à sua API local .NET.";
         atualizarInterfaceCarrinho();
     }
 }
 
+// CONFIRMAÇÃO DO PEDIDO
 function finalizarPedidoCompleto() {
     const dataEntrega = document.getElementById('delivery-date').value;
-    if (carrinho.length === 0 || !dataEntrega || valorFreteGlobal === 0) {
-        alert("Por favor, monte seu carrinho, selecione a data e calcule o seu frete.");
+    
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio! Escolha algum item acima.");
         return;
     }
-    alert(`🎉 Encomenda Confirmada!\n📅 Reservado para: ${dataEntrega.split('-').reverse().join('/')}\nObrigado por comprar na Pitadavivi!`);
+    if (!dataEntrega) {
+        alert("Por favor, selecione uma data no calendário para a sua entrega.");
+        return;
+    }
+    if (valorFreteGlobal === 0) {
+        alert("Por favor, calcule um CEP de entrega válido antes de finalizar.");
+        return;
+    }
+
+    alert(`🎉 Pedido Confirmado com Sucesso!\nReservado para o dia: ${dataEntrega.split('-').reverse().join('/')}\nObrigado por comprar na Pitadavivi!`);
 }
