@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pitadavivi | Delícias Artesanais</title>
     <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FONT AWESOME (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- BANNER TOPO -->
@@ -16,20 +23,95 @@
         <img src="./img/Logo.png" alt="Pitadavivi Delícias Artesanais" class="main-logo-img">
     </div>
 
-    <!-- MENU DE NAVEGAÇÃO -->
-    <header class="main-header">
+    <!-- MENU DE NAVEGAÇÃO FIXO COM BOTÃO E POPOVER DO CARRINHO -->
+    <header class="main-header header-fixo">
         <nav class="navigation">
             <a href="#produtos">✨ Menu Gourmet</a>
-            <a href="#checkout">🛒 Finalizar Pedido</a>
+
+            <!-- CONTAINER DO CARRINHO (BOTÃO "MINHAS GOSTOSURAS" + DROPDOWN/POPOVER) -->
+            <div class="cart-dropdown-wrapper">
+                <button id="btn-carrinho" class="cart-toggle-btn" onclick="toggleCarrinho()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-counter">Minhas Gostosuras</span>
+                </button>
+
+                <!-- CARD FLUTUANTE DO CARRINHO (IGUAL À IMAGEM) -->
+                <div id="carrinho-popover" class="cart-popover">
+                    
+                    <!-- BARRA DE FRETE GRÁTIS -->
+                    <div class="shipping-box">
+                        <p id="shipping-text">Faltam apenas <strong>R$ 150,00</strong> para você ganhar <strong>Frete Grátis!</strong></p>
+                        <div class="progress-bar-bg">
+                            <div id="shipping-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- MENSAGEM OU LISTA DOS ITENS DO CARRINHO -->
+                    <div id="carrinho-conteudo" class="cart-content-area">
+                        <p class="empty-cart-text">
+                            <em>Seu carrinho ainda está vazio... Que tal recheá-lo com nossas delícias? 👩‍🍳</em>
+                        </p>
+                    </div>
+
+                    <!-- AGENDAMENTO DE DATA -->
+                    <div class="form-group-popover">
+                        <label for="delivery-date">📅 Data de Agendamento</label>
+                        <input type="date" id="delivery-date">
+                    </div>
+
+                    <!-- CALCULAR ENTREGA -->
+                    <div class="calc-delivery-section">
+                        <label for="postal-code">Calcular Entrega</label>
+                        <input type="text" id="postal-code" placeholder="00000-000" maxlength="9">
+                        
+                        <div id="api-result" class="result-box"></div>
+
+                        <button type="button" class="btn-action btn-calculate" onclick="calcularFreteEDirecionar()">
+                            Calcular
+                        </button>
+                    </div>
+
+                    <!-- BOTÃO FINALIZAR PELO WHATSAPP -->
+                    <button class="btn-action btn-whatsapp" onclick="finalizarWhatsApp()">
+                        Finalizar por WhatsApp
+                    </button>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main class="content-wrapper">
+
+        <!-- SEÇÃO DE PILARES / DIFERENCIAIS -->
+        <section class="features-section">
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <span class="feature-icon">👩‍🍳</span>
+                    <h3>100% Artesanal & Autêntico</h3>
+                    <p>Cada receita é feita à mão, sem conservantes, preservando o verdadeiro sabor do feito em casa.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🍓</span>
+                    <h3>Curadoria de Insumos</h3>
+                    <p>Ingredientes nobres e selecionados a dedo para transformar cada mordida em uma experiência.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📦</span>
+                    <h3>Fresco & Sob Medida</h3>
+                    <p>Nada de estoque parado: seu pedido é produzido exclusivamente para a sua data com carinho em cada detalhe.</p>
+                </div>
+
+            </div>
+        </section>
+
         <!-- SEÇÃO DE PRODUTOS -->
         <section id="produtos" class="products-section">
             <h2 class="section-title">Nossas Delícias</h2>
             <div class="products-grid">
-                
+
                 <!-- 1. Antepastos -->
                 <div class="product-card">
                     <div class="product-img-wrapper">
@@ -183,48 +265,6 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DE CHECKOUT -->
-        <section id="checkout" class="checkout-section">
-            <!-- Carrinho -->
-            <div class="checkout-card">
-                <h3>🛒 Seu Carrinho</h3>
-                <ul id="carrinho-itens" class="cart-list">
-                    <li class="empty-cart">Seu carrinho está vazio.</li>
-                </ul>
-                <div class="cart-total">
-                    <span>Subtotal:</span>
-                    <span id="subtotal-valor">R$ 0,00</span>
-                </div>
-            </div>
-
-            <!-- Entrega e Frete -->
-            <div class="checkout-card">
-                <h3>📅 Agendamento & Frete</h3>
-                
-                <div class="form-group">
-                    <label for="delivery-date">Data de Entrega (Mínimo 72h de antecedência)</label>
-                    <input type="date" id="delivery-date">
-                </div>
-
-                <div class="form-group">
-                    <label for="postal-code">CEP de Destino</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="postal-code" placeholder="00000-000" maxlength="9">
-                        <button class="btn-main" onclick="calcularFreteEDirecionar()">Calcular</button>
-                    </div>
-                </div>
-
-                <div id="api-result" class="result-box"></div>
-
-                <div class="checkout-actions">
-                    <div class="cart-total final">
-                        <span>Total Geral:</span>
-                        <span id="total-geral">R$ 0,00</span>
-                    </div>
-                    <button class="btn-checkout-final" onclick="finalizarPedidoCompleto()">Confirmar e Reservar Pedido</button>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- JANELA POP-UP (MODAL) Oculta por padrão -->
@@ -238,10 +278,17 @@
         </div>
     </div>
 
+    <!-- RODAPÉ COMPLETO -->
     <footer class="main-footer">
-        <p>&copy; 2026 Pitadavivi - Delícias Artesanais. Feito com amor.</p>
+        <p>&copy; 2026 Pitadavivi Ltda. | Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/pitadavivi" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/pitadavivi" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/5511987342562" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
 
     <script src="./js/script.js"></script>
 </body>
+
 </html>

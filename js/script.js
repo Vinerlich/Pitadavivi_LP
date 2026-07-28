@@ -36,7 +36,32 @@ const bancoSabores = {
     ]
 };
 
-// CONTROLE DO MODAL FLUTUANTE
+// CONSTANTES E ESTADO GLOBAL DA COMPRA
+const META_FRETE_GRATIS = 150.00;
+let carrinho = [];
+let valorFreteGlobal = 0;
+let freteCalculadoDaApi = 0;
+
+// EXIBIR OU OCULTAR POPOVER DO CARRINHO
+function toggleCarrinho() {
+    const popover = document.getElementById('carrinho-popover');
+    if (popover) {
+        popover.classList.toggle('active');
+    }
+}
+
+// FECHAR POPOVER AO CLICAR FORA DELE
+document.addEventListener('click', function(event) {
+    const wrapper = document.querySelector('.cart-dropdown-wrapper');
+    if (wrapper && !wrapper.contains(event.target)) {
+        const popover = document.getElementById('carrinho-popover');
+        if (popover && popover.classList.contains('active')) {
+            popover.classList.remove('active');
+        }
+    }
+});
+
+// CONTROLE DO MODAL DE SELEÇÃO DE SABORES
 function abrirModal(categoria) {
     const modal = document.getElementById('modal-sabores');
     const titulo = document.getElementById('modal-titulo-categoria');
@@ -49,111 +74,174 @@ function abrirModal(categoria) {
         sobremesas: "Sobremesas Finas"
     };
 
-    titulo.innerText = titulosFormatados[categoria] || "Opções Disponíveis";
-    lista.innerHTML = '';
-
-    const sabores = bancoSabores[categoria] || [];
-    
-    sabores.forEach(sabor => {
-        lista.innerHTML += `
-            <div class="flavor-item-row">
-                <img src="${sabor.foto}" alt="${sabor.nome}" class="flavor-mini-img">
-                <div class="flavor-details">
-                    <h4>${sabor.nome}</h4>
-                    <p>${sabor.desc}</p>
+    if (titulo) titulo.innerText = titulosFormatados[categoria] || "Opções Disponíveis";
+    if (lista) {
+        lista.innerHTML = '';
+        const sabores = bancoSabores[categoria] || [];
+        
+        sabores.forEach(sabor => {
+            lista.innerHTML += `
+                <div class="flavor-item-row">
+                    <img src="${sabor.foto}" alt="${sabor.nome}" class="flavor-mini-img">
+                    <div class="flavor-details">
+                        <h4>${sabor.nome}</h4>
+                        <p>${sabor.desc}</p>
+                    </div>
+                    <div class="flavor-action">
+                        <span class="price">R$ ${sabor.preco.toFixed(2).replace('.', ',')}</span>
+                        <button class="btn-add" style="padding: 6px 12px; font-size: 12px;" 
+                            onclick="adicionarAoCarrinho('${sabor.nome}', ${sabor.preco}); fecharModal();">
+                            + Adicionar
+                        </button>
+                    </div>
                 </div>
-                <div class="flavor-action">
-                    <span class="price">R$ ${sabor.preco.toFixed(2).replace('.', ',')}</span>
-                    <button class="btn-add" style="padding: 6px 12px; font-size: 12px;" 
-                        onclick="adicionarAoCarrinho('${sabor.nome}', ${sabor.preco}); fecharModal();">
-                        + Adicionar
-                    </button>
-                </div>
-            </div>
-        `;
-    });
+            `;
+        });
+    }
 
-    modal.style.display = 'flex';
+    if (modal) modal.style.display = 'flex';
 }
 
 function fecharModal() {
-    document.getElementById('modal-sabores').style.display = 'none';
-}
-
-// Fechar modal ao clicar fora da caixa branca
-window.onclick = function(event) {
     const modal = document.getElementById('modal-sabores');
-    if (event.target == modal) {
-        fecharModal();
-    }
+    if (modal) modal.style.display = 'none';
 }
 
-// ESTADO GLOBAL DA COMPRA
-let carrinho = [];
-let valorFreteGlobal = 0;
+// REGRAS DE INICIALIZAÇÃO DE INPUTS (DATA E MÁSCARA CEP)
+document.addEventListener('DOMContentLoaded', () => {
+    // Bloquear Calendário para 72h (3 dias) de antecedência
+    const dateInput = document.getElementById('delivery-date');
+    if (dateInput) {
+        const dataMinima = new Date();
+        dataMinima.setDate(dataMinima.getDate() + 3);
 
-// REGRA DE NEGÓCIO: BLOQUEAR CALENDÁRIO PARA 72H (3 DIAS) DE ANTECEDÊNCIA
-const dateInput = document.getElementById('delivery-date');
-if(dateInput) {
-    const dataMinima = new Date();
-    dataMinima.setDate(dataMinima.getDate() + 3);
-
-    const ano = dataMinima.getFullYear();
-    const mes = String(dataMinima.getMonth() + 1).padStart(2, '0');
-    const dia = String(dataMinima.getDate()).padStart(2, '0');
-    
-    dateInput.min = `${ano}-${mes}-${dia}`;
-}
-
-// Máscara Automática para o CEP
-document.getElementById('postal-code').addEventListener('input', function (e) {
-    let value = e.target.value.replace(/\D/g, '');
-    if (value.length > 5) {
-        value = value.substring(0, 5) + '-' + value.substring(5, 8);
+        const ano = dataMinima.getFullYear();
+        const mes = String(dataMinima.getMonth() + 1).padStart(2, '0');
+        const dia = String(dataMinima.getDate()).padStart(2, '0');
+        
+        dateInput.min = `${ano}-${mes}-${dia}`;
     }
-    e.target.value = value;
+
+    // Máscara Automática para o CEP
+    const postalInput = document.getElementById('postal-code');
+    if (postalInput) {
+        postalInput.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 5) {
+                value = value.substring(0, 5) + '-' + value.substring(5, 8);
+            }
+            e.target.value = value;
+        });
+    }
 });
 
 // ADICIONAR ITENS AO CARRINHO
 function adicionarAoCarrinho(nome, preco) {
-    carrinho.push({ nome, preco });
+    const itemExistente = carrinho.find(item => item.nome === nome);
+
+    if (itemExistente) {
+        itemExistente.quantidade += 1;
+    } else {
+        carrinho.push({
+            nome: nome,
+            preco: parseFloat(preco),
+            quantidade: 1
+        });
+    }
+
+    atualizarInterfaceCarrinho();
+    
+    // Abre o popover para dar um feedback visual imediato
+    const popover = document.getElementById('carrinho-popover');
+    if (popover) popover.classList.add('active');
+}
+
+// ALTERAR QUANTIDADE (+ / -)
+function alterarQuantidade(index, mudanca) {
+    carrinho[index].quantidade += mudanca;
+
+    if (carrinho[index].quantidade <= 0) {
+        carrinho.splice(index, 1);
+    }
+
     atualizarInterfaceCarrinho();
 }
 
-// ATUALIZAR VALORES EM TELA
+// ATUALIZAR INTERFACE DO POPOVER E BOTÃO PRINCIPAL
 function atualizarInterfaceCarrinho() {
-    const listaHtml = document.getElementById('carrinho-itens');
-    const subtotalHtml = document.getElementById('subtotal-valor');
-    const totalGeralHtml = document.getElementById('total-geral');
+    const cartCounter = document.getElementById('cart-counter');
+    const carrinhoConteudo = document.getElementById('carrinho-conteudo');
+    const shippingText = document.getElementById('shipping-text');
+    const progressBar = document.getElementById('shipping-progress-bar');
     
-    if (carrinho.length === 0) {
-        listaHtml.innerHTML = '<li class="empty-cart">Seu carrinho está vazio.</li>';
-        subtotalHtml.innerText = 'R$ 0,00';
-        totalGeralHtml.innerText = `R$ ${valorFreteGlobal.toFixed(2).replace('.', ',')}`;
-        return;
-    }
-
-    listaHtml.innerHTML = '';
+    let totalItens = 0;
     let subtotal = 0;
+
     carrinho.forEach(item => {
-        subtotal += item.preco;
-        listaHtml.innerHTML += `
-            <li class="cart-item">
-                <span>${item.nome}</span>
-                <strong>R$ ${item.preco.toFixed(2).replace('.', ',')}</strong>
-            </li>
-        `;
+        totalItens += item.quantidade;
+        subtotal += item.preco * item.quantidade;
     });
 
-    subtotalHtml.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-    let totalGeral = subtotal + valorFreteGlobal;
-    totalGeralHtml.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+    // Atualiza botão do menu do topo
+    if (cartCounter) {
+        cartCounter.innerText = `${totalItens} ${totalItens === 1 ? 'item' : 'itens'} | R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+    }
+
+    // Atualiza conteúdo dentro do Popover
+    if (carrinhoConteudo) {
+        if (carrinho.length === 0) {
+            carrinhoConteudo.innerHTML = `
+                <p class="empty-cart-text">
+                    <em>Seu carrinho ainda está vazio... Que tal recheá-lo com nossas delícias? 👩‍🍳</em>
+                </p>`;
+        } else {
+            let listaHTML = '<ul class="cart-items-list">';
+            carrinho.forEach((item, index) => {
+                listaHTML += `
+                    <li class="cart-item-row">
+                        <span><strong>${item.quantidade}x</strong> ${item.nome}</span>
+                        <div class="cart-item-actions">
+                            <span>R$ ${(item.preco * item.quantidade).toFixed(2).replace('.', ',')}</span>
+                            <button class="cart-qty-btn" onclick="alterarQuantidade(${index}, -1)">-</button>
+                            <button class="cart-qty-btn" onclick="alterarQuantidade(${index}, 1)">+</button>
+                        </div>
+                    </li>`;
+            });
+            listaHTML += '</ul>';
+            carrinhoConteudo.innerHTML = listaHTML;
+        }
+    }
+
+    // Atualiza Régua de Frete Grátis
+    if (subtotal >= META_FRETE_GRATIS && carrinho.length > 0) {
+        if (shippingText) shippingText.innerHTML = '🎉 Você ganhou <strong>Frete Grátis!</strong>';
+        if (progressBar) {
+            progressBar.style.width = '100%';
+            progressBar.style.backgroundColor = '#25D366';
+        }
+        valorFreteGlobal = 0;
+    } else {
+        const falta = META_FRETE_GRATIS - subtotal;
+        const porcentagem = Math.min((subtotal / META_FRETE_GRATIS) * 100, 100);
+
+        if (shippingText) {
+            shippingText.innerHTML = `Faltam apenas <strong>R$ ${falta.toFixed(2).replace('.', ',')}</strong> para você ganhar <strong>Frete Grátis!</strong>`;
+        }
+        if (progressBar) {
+            progressBar.style.width = `${porcentagem}%`;
+            progressBar.style.backgroundColor = 'var(--primary-orange)';
+        }
+        valorFreteGlobal = freteCalculadoDaApi;
+    }
 }
 
-// CHAMADA POST CONECTADA DIRETAMENTE À SUA API .NET C#
+// REQUISITAR CÁLCULO DE FRETE COM A API .NET
 async function calcularFreteEDirecionar() {
     const inputElement = document.getElementById('postal-code');
     const resultDiv = document.getElementById('api-result');
+    
+    if (!inputElement || !resultDiv) return;
+
     const cepLimpo = inputElement.value.replace(/\D/g, '');
 
     if (!cepLimpo || cepLimpo.length !== 8) {
@@ -163,7 +251,7 @@ async function calcularFreteEDirecionar() {
     }
 
     resultDiv.className = "result-box loading";
-    resultDiv.innerHTML = "<em>Consultando rota e valores na API Pitadavivi...</em>";
+    resultDiv.innerHTML = "<em>Consultando taxa de entrega...</em>";
 
     const API_URL = "http://localhost:5253/api/frete"; 
 
@@ -177,50 +265,71 @@ async function calcularFreteEDirecionar() {
         const data = await response.json();
 
         if (!response.ok) {
+            freteCalculadoDaApi = 0;
             valorFreteGlobal = 0;
             resultDiv.className = "result-box error";
-            resultDiv.innerHTML = `<strong>Bloqueio de Entrega:</strong> ${data.mensagem}`;
+            resultDiv.innerHTML = `<strong>Aviso:</strong> ${data.mensagem}`;
             atualizarInterfaceCarrinho();
             return;
         }
 
-        valorFreteGlobal = data.valorFrete;
+        freteCalculadoDaApi = Number(data.valorFrete) || 0;
         
         resultDiv.className = "result-box success";
         resultDiv.innerHTML = `
-            <strong>✓ Rota Mapeada!</strong><br>
-            📍 Região: ${data.logradouroDestino || 'Logradouro'}, ${data.bairroDestino}<br>
-            🏙️ Cidade: ${data.cidadeDestino} - SP<br>
-            🛣️ Distância Real: ${data.distanciaKm} km<br>
-            💰 Taxa de Entrega: R$ ${data.valorFrete.toFixed(2).replace('.', ',')}
+            📍 Região: ${data.bairroDestino || 'Mapeada'}<br>
+            🛣️ Distância: ${data.distanciaKm} km<br>
+            💰 Taxa: R$ ${freteCalculadoDaApi.toFixed(2).replace('.', ',')}
         `;
 
         atualizarInterfaceCarrinho();
 
     } catch (err) {
+        freteCalculadoDaApi = 0;
         valorFreteGlobal = 0;
         resultDiv.className = "result-box error";
-        resultDiv.innerHTML = "<strong>Erro:</strong> Não foi possível se conectar à sua API local .NET.";
+        resultDiv.innerHTML = "<strong>Erro:</strong> Falha de conexão com a API de frete.";
         atualizarInterfaceCarrinho();
     }
 }
 
-// CONFIRMAÇÃO DO PEDIDO
-function finalizarPedidoCompleto() {
-    const dataEntrega = document.getElementById('delivery-date').value;
-    
+// GERAR MENSAGEM FORMATADA E FINALIZAR PELO WHATSAPP
+function finalizarWhatsApp() {
+    const dataEntregaInput = document.getElementById('delivery-date');
+    const dataEntrega = dataEntregaInput ? dataEntregaInput.value : '';
+
     if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio! Escolha algum item acima.");
-        return;
-    }
-    if (!dataEntrega) {
-        alert("Por favor, selecione uma data no calendário para a sua entrega.");
-        return;
-    }
-    if (valorFreteGlobal === 0) {
-        alert("Por favor, calcule um CEP de entrega válido antes de finalizar.");
+        alert("Seu carrinho está vazio! Escolha algum item no menu.");
         return;
     }
 
-    alert(`🎉 Pedido Confirmado com Sucesso!\nReservado para o dia: ${dataEntrega.split('-').reverse().join('/')}\nObrigado por comprar na Pitadavivi!`);
+    if (!dataEntrega) {
+        alert("Por favor, escolha a data do agendamento!");
+        return;
+    }
+
+    let subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
+    let totalGeral = subtotal + valorFreteGlobal;
+
+    let mensagem = `*Olá, Pitadavivi! Gostaria de fazer o seguinte pedido:*\n\n`;
+    
+    carrinho.forEach(item => {
+        mensagem += `• ${item.quantidade}x ${item.nome} - R$ ${(item.preco * item.quantidade).toFixed(2).replace('.', ',')}\n`;
+    });
+
+    mensagem += `\n*Subtotal:* R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+    
+    if (subtotal >= META_FRETE_GRATIS) {
+        mensagem += `\n*Frete:* GRÁTIS 🎉`;
+    } else {
+        mensagem += `\n*Frete:* R$ ${valorFreteGlobal.toFixed(2).replace('.', ',')}`;
+    }
+
+    mensagem += `\n*Total Geral:* R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+    mensagem += `\n*Data Agendada:* ${dataEntrega.split('-').reverse().join('/')}`;
+
+    const numeroWhatsApp = "5511987342562"; // Insira aqui o número oficial com DDD
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, '_blank');
 }
