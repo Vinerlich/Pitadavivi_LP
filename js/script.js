@@ -61,50 +61,67 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// CONTROLE DO MODAL DE SELEÇÃO DE SABORES
+// CONTROLE DO MODAL DE SELEÇÃO DE SABORES (FOCADO POR CATEGORIA)
 function abrirModal(categoria) {
     const modal = document.getElementById('modal-sabores');
     const titulo = document.getElementById('modal-titulo-categoria');
     const lista = document.getElementById('modal-lista-sabores');
     
     const titulosFormatados = {
-        antepastos: "Antepastos da Casa", bolos: "Bolos Caseiros & Festa", docinhos: "Docinhos Especiais",
-        geleias: "Geleias Artesanais", kits: "Kits & Presentes", marmitas: "Marmitas Congeladas",
-        paes: "Pães de Fermentação Natural", pets: "Linha Pet Saudável", sazonais: "Produtos Sazonais", 
+        antepastos: "Antepastos da Casa", 
+        bolos: "Bolos Caseiros & Festa", 
+        docinhos: "Docinhos Especiais",
+        geleias: "Geleias Artesanais", 
+        kits: "Kits & Presentes", 
+        marmitas: "Marmitas Congeladas",
+        paes: "Pães de Fermentação Natural", 
+        pets: "Linha Pet Saudável", 
+        sazonais: "Produtos Sazonais", 
         sobremesas: "Sobremesas Finas"
     };
 
-    if (titulo) titulo.innerText = titulosFormatados[categoria] || "Opções Disponíveis";
+    if (titulo) {
+        titulo.innerText = titulosFormatados[categoria] || "Opções Disponíveis";
+    }
+
     if (lista) {
         lista.innerHTML = '';
         const sabores = bancoSabores[categoria] || [];
         
-        sabores.forEach(sabor => {
-            lista.innerHTML += `
-                <div class="flavor-item-row">
-                    <img src="${sabor.foto}" alt="${sabor.nome}" class="flavor-mini-img">
-                    <div class="flavor-details">
-                        <h4>${sabor.nome}</h4>
-                        <p>${sabor.desc}</p>
+        if (sabores.length === 0) {
+            lista.innerHTML = '<p class="empty-text">Nenhum item disponível nesta categoria no momento.</p>';
+        } else {
+            sabores.forEach(sabor => {
+                lista.innerHTML += `
+                    <div class="flavor-item-row">
+                        <img src="${sabor.foto}" alt="${sabor.nome}" class="flavor-mini-img">
+                        <div class="flavor-details">
+                            <h4>${sabor.nome}</h4>
+                            <p>${sabor.desc}</p>
+                        </div>
+                        <div class="flavor-action">
+                            <span class="price">R$ ${sabor.preco.toFixed(2).replace('.', ',')}</span>
+                            <button class="btn-add" style="padding: 6px 12px; font-size: 12px;" 
+                                onclick="adicionarAoCarrinho('${sabor.nome}', ${sabor.preco}); fecharModal();">
+                                + Adicionar
+                            </button>
+                        </div>
                     </div>
-                    <div class="flavor-action">
-                        <span class="price">R$ ${sabor.preco.toFixed(2).replace('.', ',')}</span>
-                        <button class="btn-add" style="padding: 6px 12px; font-size: 12px;" 
-                            onclick="adicionarAoCarrinho('${sabor.nome}', ${sabor.preco}); fecharModal();">
-                            + Adicionar
-                        </button>
-                    </div>
-                </div>
-            `;
-        });
+                `;
+            });
+        }
     }
 
-    if (modal) modal.style.display = 'flex';
+    if (modal) {
+        modal.style.display = 'flex';
+    }
 }
 
 function fecharModal() {
     const modal = document.getElementById('modal-sabores');
-    if (modal) modal.style.display = 'none';
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
 
 // REGRAS DE INICIALIZAÇÃO DE INPUTS (DATA E MÁSCARA CEP)
@@ -153,7 +170,9 @@ function adicionarAoCarrinho(nome, preco) {
     
     // Abre o popover para dar um feedback visual imediato
     const popover = document.getElementById('carrinho-popover');
-    if (popover) popover.classList.add('active');
+    if (popover) {
+        popover.classList.add('active');
+    }
 }
 
 // ALTERAR QUANTIDADE (+ / -)
@@ -328,7 +347,7 @@ function finalizarWhatsApp() {
     mensagem += `\n*Total Geral:* R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
     mensagem += `\n*Data Agendada:* ${dataEntrega.split('-').reverse().join('/')}`;
 
-    const numeroWhatsApp = "5511987342562"; // Insira aqui o número oficial com DDD
+    const numeroWhatsApp = "5511987342562"; // Número oficial com DDD
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
     window.open(url, '_blank');
