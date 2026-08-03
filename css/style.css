@@ -319,56 +319,72 @@ body {
     padding: 0 20px;
 }
 
-/* SEÇÃO DE DIFERENCIAIS */
+/* SEÇÃO DE DIFERENCIAIS (3 em linha em qualquer tela) */
 .features-section {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-.features-grid {
+.features-section .features-grid {
     display: grid;
-    /* Força exatamente 3 colunas de tamanhos iguais */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr); /* Força sempre 3 colunas */
+    gap: 12px;
 }
 
-.feature-card {
+.features-section .feature-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 18px 14px; /* Padding reduzido para caber melhor */
+    padding: 16px 10px;
     text-align: center;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-card:hover {
+.features-section .feature-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 35px rgba(46, 30, 15, 0.08);
 }
 
-.feature-icon {
-    font-size: 26px; /* Ícone levemente menor */
+.features-section .feature-icon {
+    font-size: 24px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
-.feature-card h3 {
+.features-section .feature-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 16px; /* Título levemente ajustado */
+    font-size: 15px;
     margin-bottom: 6px;
     color: var(--dark-brown);
 }
 
-.feature-card p {
-    font-size: 12.5px; /* Texto um pouco mais compacto */
+.features-section .feature-card p {
+    font-size: 12px;
     color: var(--text-muted);
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
-/* Garante que no celular os cards voltem a empilhar para não quebrar a tela */
+/* Ajustes finos para celulares/telas bem pequenas não espremerem demais */
 @media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr;
+    .features-section .features-grid {
+        gap: 8px; /* Reduz espaço entre os cards */
+    }
+
+    .features-section .feature-card {
+        padding: 12px 6px;
+    }
+
+    .features-section .feature-card h3 {
+        font-size: 12px;
+    }
+
+    .features-section .feature-card p {
+        font-size: 10.5px;
+        line-height: 1.25;
+    }
+
+    .features-section .feature-icon {
+        font-size: 20px;
     }
 }
 
