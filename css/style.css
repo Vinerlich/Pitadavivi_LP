@@ -388,7 +388,7 @@ body {
     }
 }
 
-/* SEÇÃO DE PRODUTOS */
+/* SEÇÃO DE PRODUTOS - GRADE FIXA DE 3 COLUNAS EM TELAS GRANDES */
 .section-title {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
@@ -407,9 +407,21 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); /* Trava perfeitamente em 3 colunas, fechando as 4 fileiras de 12 cards sem sobras */
+    }
 }
 
 .product-card {
@@ -642,4 +654,28 @@ body {
         width: 50px;
         height: 50px;
     }
+}
+
+/* ESTILO PARA AS OPÇÕES DE UNIDADE / CENTO NO MODAL (FONTE REDUZIDA) */
+.flavor-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.flavor-options label {
+    font-size: 11px;
+    color: var(--dark-brown);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.flavor-options input[type="radio"] {
+    accent-color: var(--primary-orange);
+    cursor: pointer;
+    transform: scale(0.9);
 }
