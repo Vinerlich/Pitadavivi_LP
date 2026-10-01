@@ -2,63 +2,63 @@
 const bancoSabores = {
     antepastos: [
         { 
-            nome: "Alichela (150g)", 
+            nome: "Alichela", 
             precoUnitario: 33.00, 
             precoCento: null, 
             desc: "Clássica iguaria italiana à base de filés de anchova selecionados, salsinha, alcaparras e azeite extra virgem, com sabor intenso e marcante.", 
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Babaganuche (150g)", 
+            nome: "Babaganuche", 
             precoUnitario: 16.50, 
             precoCento: null, 
             desc: "Tradicional pasta de berinjela defumada na brasa, delicadamente temperada com tahine, limão e azeite de oliva.", 
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Caponata de abobrinha (150g)", 
+            nome: "Caponata de abobrinha", 
             precoUnitario: 18.00, 
             precoCento: null, 
             desc: "Delicada seleção de abobrinhas frescas refogadas lentamente com cebola, pimentões coloridos, azeitonas e ervas aromáticas no azeite.", 
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Caponata de berinjela (150g)", 
+            nome: "Caponata de berinjela", 
             precoUnitario: 18.00, 
             precoCento: null, 
             desc: "Sofisticada receita mediterrânea de berinjelas cortadas em cubos, assadas com uvas-passas, nozes tostadas, pimentões e azeite de oliva de primeira linha.", 
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Homus (150g)", 
+            nome: "Homus", 
             precoUnitario: 22.50, 
             precoCento: null, 
             desc: "Aveludada pasta de grão-de-bico finalizada com tahine artesanal, azeite extra virgem e um toque cítrico refrescante.", 
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Patê de cebola (150g)", 
+            nome: "Patê de cebola", 
             precoUnitario: 13.50, 
             precoCento: null, 
             desc: "Creme leve e acetinado com cebolas levemente caramelizadas e um blend exclusivo de ervas finas.", 
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Patê de ricota com damasco (150g)", 
+            nome: "Patê de ricota com damasco", 
             precoUnitario: 22.50, 
             precoCento: null, 
             desc: "Harmoniosa combinação de ricota fresca e artesanal com delicados pedaços de damascos turcos selecionados.", 
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Patê tomate com manjericão (150g)", 
+            nome: "Patê tomate com manjericão", 
             precoUnitario: 15.00, 
             precoCento: null, 
             desc: "Preparação aromática de tomates maduros reduzidos lentamente, coroados com folhas frescas de manjericão.", 
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Sardela (150g)", 
+            nome: "Sardela", 
             precoUnitario: 16.50, 
             precoCento: null, 
             desc: "Tradicional iguaria mediterrânea à base de pimentões tostados, anchovas selecionadas e especiarias de sabor marcante.", 
@@ -67,7 +67,7 @@ const bancoSabores = {
     ],
     bolos: [
         { nome: "Bolo de Cenoura com Brigadeiro", precoUnitario: 28.00, precoCento: null, desc: "Tradicional bolo caseiro com cobertura vulcão.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Bolo de Festa Red Velvet", precoUnitario: 85.00, precoCento: null, desc: "Massa aveludada com recheio de cream cheese.", foto: "https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&w=150&q=80" }
+        { nome: "Bolo Red Velvet", precoUnitario: 85.00, precoCento: null, desc: "Massa aveludada com recheio de cream cheese.", foto: "./img/RedVelvet.jpg" }
     ],
     docinhos: [
         { nome: "Brigadeiro", precoUnitario: 4.00, precoCento: 200.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
@@ -115,15 +115,15 @@ const bancoSabores = {
         { nome: "Lanche Natural: Peito de Peru", precoUnitario: 20.00, precoCento: null, desc: "Peito de peru, alface americana, tomate, cenoura, ricota.", foto: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=150&q=80" },
         { nome: "Salada: Atum", precoUnitario: 20.00, precoCento: null, desc: "Atum defumado, mix de folhas, tomate, cenoura, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
         { nome: "Salada: Frango", precoUnitario: 20.00, precoCento: null, desc: "Frango desfiado, mix de folhas, cenoura, pepino, tomate, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Salada: Macarrão", precoUnitario: 20.00, precoCento: null, desc: "Atum defumado ou frango desfiado, mix de folhas, tomate, cenoura, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Salada: Macarrão", precoUnitario: 20.00, precoCento: null, desc: "Atum defumado ou frango desfiado, macarrão fusili, tomate, cenoura, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
         { nome: "Molho: Limão", precoUnitario: 5.00, precoCento: null, desc: "Molho especial à base de limão.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
         { nome: "Molho: Iogurte", precoUnitario: 5.00, precoCento: null, desc: "Molho leve e cremoso de iogurte.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
         { nome: "Molho: Mostarda e Mel", precoUnitario: 5.00, precoCento: null, desc: "Clássica combinação agridoce de mostarda e mel.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
         { nome: "Molho: Maionese Verde", precoUnitario: 5.00, precoCento: null, desc: "Maionese verde artesanal temperada.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" }
     ],
     paes: [
-        { nome: "Pão Campanha Sourdough", precoUnitario: 24.00, precoCento: null, desc: "Fermentação natural de 36 horas.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Baguete Francesa Clássica", precoUnitario: 14.00, precoCento: null, desc: "Crocância perfeita com miolo leve.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Pão de Alecrim ", precoUnitario: 24.00, precoCento: null, desc: "Massa fofinha com delocioso aroma e sabor do Alecrim.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Baguete Recheada Frango", precoUnitario: 14.00, precoCento: null, desc: "Crocância perfeita com miolo leve.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
         { nome: "Roscas Doces: Coco", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce sabor coco.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
         { nome: "Roscas Doces: Ricota com frutas", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce recheada com ricota e frutas.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
         { nome: "Roscas Doces: Romeu e Julieta", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce sabor goiabada com queijo.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
