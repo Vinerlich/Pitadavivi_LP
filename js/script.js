@@ -65,91 +65,239 @@ const bancoSabores = {
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         }
     ],
-    bolos: [
-        { nome: "Bolo de Cenoura com Brigadeiro", precoUnitario: 28.00, precoCento: null, desc: "Tradicional bolo caseiro com cobertura vulcão.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Bolo Red Velvet", precoUnitario: 85.00, precoCento: null, desc: "Massa aveludada com recheio de cream cheese.", foto: "./img/RedVelvet.jpg" }
+   bolos: [
+        { nome: "Cenoura com Brigadeiro", precoUnitario: 28.00, precoCento: null, desc: "Tradicional bolo caseiro com cobertura vulcão de brigadeiro.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Red Velvet", precoUnitario: 85.00, precoCento: null, desc: "Massa aveludada com recheio de cream cheese.", foto: "./img/RedVelvet.jpg" },
+        { nome: "Fubá Cremoso", precoUnitario: 30.00, precoCento: null, desc: "Bolo caseiro com textura cremosa e sabor de infância.", foto: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Laranja Caseiro", precoUnitario: 26.00, precoCento: null, desc: "Bolo fofinho com calda leve de laranja fresca.", foto: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Chocolate com Calda", precoUnitario: 32.00, precoCento: null, desc: "Massa fofinha de chocolate com cobertura generosa.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Limão com Iogurte", precoUnitario: 28.00, precoCento: null, desc: "Massa leve e fofinha com glacê refrescante de limão.", foto: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Maçã com Canela e Nozes", precoUnitario: 34.00, precoCento: null, desc: "Bolo rústico aromático com pedaços de maçã e toque de canela.", foto: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Festa: Bem-Casado", precoUnitario: 90.00, precoCento: null, desc: "Massa delicada recheada com doce de leite artesanal.", foto: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Festa: Prestígio Gourmet", precoUnitario: 95.00, precoCento: null, desc: "Massa de chocolate molhadinha recheada com coco fresco.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Festa: Abacaxi com Coco", precoUnitario: 90.00, precoCento: null, desc: "Recheio cremoso de coco com pedaços suculentos de abacaxi.", foto: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=150&q=80" }
     ],
-    docinhos: [
-        { nome: "Brigadeiro", precoUnitario: 4.00, precoCento: 200.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
-        { nome: "Beijinho", precoUnitario: 4.00, precoCento: 200.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
-        { nome: "Bicho de pé / Morango", precoUnitario: 4.00, precoCento: 200.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
+   docinhos: [
+        { nome: "Brigadeiro", precoUnitario: 4.00, precoCento: 180.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
+        { nome: "Beijinho", precoUnitario: 4.00, precoCento: 180.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
+        { nome: "Bicho de pé / Morango", precoUnitario: 4.00, precoCento: 180.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
         { nome: "Ninho", precoUnitario: 4.00, precoCento: 200.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
-        { nome: "Paçoca", precoUnitario: 4.00, precoCento: 200.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
-        { nome: "Cajuzinho", precoUnitario: 4.00, precoCento: 200.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
-        { nome: "Ninho com uva", precoUnitario: 5.00, precoCento: 280.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
-        { nome: "Ninho com Nutella", precoUnitario: 5.00, precoCento: 280.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
-        { nome: "Churros", precoUnitario: 5.00, precoCento: 280.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
-        { nome: "Pistache", precoUnitario: 5.00, precoCento: 280.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
-        { nome: "Nozes", precoUnitario: 5.00, precoCento: 280.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
-        { nome: "Belga", precoUnitario: 5.00, precoCento: 280.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" }
+        { nome: "Paçoca", precoUnitario: 4.00, precoCento: 180.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
+        { nome: "Cajuzinho", precoUnitario: 4.00, precoCento: 180.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
+        { nome: "Abacaxi Vidrado", precoUnitario: 4.00, precoCento: 200.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
+        { nome: "Ninho com uva", precoUnitario: 5.00, precoCento: 210.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
+        { nome: "Ninho com Nutella", precoUnitario: 5.00, precoCento: 210.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
+        { nome: "Churros", precoUnitario: 5.00, precoCento: 210.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
+        { nome: "Pistache", precoUnitario: 5.00, precoCento: 220.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
+        { nome: "Nozes", precoUnitario: 5.00, precoCento: 220.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
+        { nome: "Belga", precoUnitario: 5.00, precoCento: 220.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" }
     ],
-    geleias: [
-        { nome: "Geleia: Amora com manjericão (150g)", precoUnitario: 55.00, precoCento: null, desc: "Feita artesanalmente com amoras frescas e um toque aromático de manjericão.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Geleia: Damasco (150g)", precoUnitario: 55.00, precoCento: null, desc: "Doçura equilibrada e pedaços selecionados de damasco.", foto: "https://images.unsplash.com/photo-1622484211148-7163014a706b?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Geleia: Manga com maracujá (150g)", precoUnitario: 45.00, precoCento: null, desc: "A harmonia perfeita entre a doçura da manga e a acidez do maracujá.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Geleia: Morango (150g)", precoUnitario: 40.00, precoCento: null, desc: "Clássica geleia artesanal com pedaços suculentos de morango.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Geleia: Goiaba (150g)", precoUnitario: 40.00, precoCento: null, desc: "Sabor caseiro marcante de goiaba fresca.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Acompanhamento para Salgado: Alho", precoUnitario: 50.00, precoCento: null, desc: "Especial para acompanhar petiscos e salgados.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Acompanhamento para Salgado: Chutney cebola roxa", precoUnitario: 50.00, precoCento: null, desc: "Agridoce sofisticado de cebola roxa.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Acompanhamento para Salgado: Pimenta", precoUnitario: 50.00, precoCento: null, desc: "Geleia ou conserva picante artesanal.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Acompanhamento para Salgado: Tomate com pimenta", precoUnitario: 50.00, precoCento: null, desc: "Combinação saborosa de tomate com um toque de pimenta.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" }
+   geleias: [
+        { nome: "Amora com Manjericão", precoUnitario: 55.00, precoCento: null, desc: "Feita artesanalmente com amoras frescas e um toque aromático de manjericão.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Damasco", precoUnitario: 55.00, precoCento: null, desc: "Doçura equilibrada e pedaços selecionados de damasco.", foto: "https://images.unsplash.com/photo-1622484211148-7163014a706b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Manga com Maracujá", precoUnitario: 45.00, precoCento: null, desc: "A harmonia perfeita entre a doçura da manga e a acidez do maracujá.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Morango", precoUnitario: 40.00, precoCento: null, desc: "Clássica geleia artesanal com pedaços suculentos de morango.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Goiaba", precoUnitario: 40.00, precoCento: null, desc: "Sabor caseiro marcante de goiaba fresca.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Geleia de Alho", precoUnitario: 50.00, precoCento: null, desc: "Especial para acompanhar petiscos, churrasco.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Chutney de Cebola Roxa", precoUnitario: 50.00, precoCento: null, desc: "Agridoce sofisticado de cebola roxa para carnes e petiscos.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Pimenta", precoUnitario: 50.00, precoCento: null, desc: "Geleia agridoce e picante artesanalmente equilibrada, perfeita para queijos e salgados.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Tomate com Pimenta ", precoUnitario: 50.00, precoCento: null, desc: "Combinação saborosa de tomate artesanal com um toque de pimenta.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" }
     ],
     kits: [
         { nome: "Kit Café da Manhã Completo", precoUnitario: 95.00, precoCento: null, desc: "1 Pão, 1 Geleia, 1 Bolo Caseiro pequeno.", foto: "https://images.unsplash.com/photo-1549417229-aa67d3263c09?auto=format&fit=crop&w=150&q=80" }
     ],
-    marmitas: [
-        { nome: "Marmita: Almôndegas de Carne", precoUnitario: 22.00, precoCento: null, desc: "Almôndegas de carne bovina, macarrão fusilli ou purê de batatas, molho ao sugo.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Marmita: Berinjela ou Abobrinha Recheada", precoUnitario: 22.00, precoCento: null, desc: "Recheada com carne moída bovina ou frango desfiado, molho ao sugo, arroz.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Marmita: Carne com Abobrinha", precoUnitario: 24.00, precoCento: null, desc: "Carne bovina refogada com abobrinha, purê de batatas.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Marmita: Carne Moída", precoUnitario: 20.00, precoCento: null, desc: "Carne bovina, arroz, feijão carioca, legumes.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Marmita: Escondidinho", precoUnitario: 22.00, precoCento: null, desc: "Carne bovina ou frango, purê de batatas salpicado com queijo.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Marmita: Frango Grelhado", precoUnitario: 20.00, precoCento: null, desc: "Filé grelhado, arroz, feijão carioca, mix de legumes.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Marmita: Frango em Tiras", precoUnitario: 20.00, precoCento: null, desc: "Tiras de frango grelhado, arroz à grega.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Marmita: Strogonoff", precoUnitario: 24.00, precoCento: null, desc: "Carne ou frango, arroz, batata assada.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
+   marmitas: [
+        { nome: "Almôndegas de Carne", precoUnitario: 22.00, precoCento: null, desc: "Almôndegas de carne bovina, macarrão fusilli ou purê de batatas, molho ao sugo.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Berinjela ou Abobrinha Recheada", precoUnitario: 22.00, precoCento: null, desc: "Recheada com carne moída bovina ou frango desfiado, molho ao sugo, arroz.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Carne com Abobrinha", precoUnitario: 24.00, precoCento: null, desc: "Carne bovina refogada com abobrinha, purê de batatas.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Carne Moída", precoUnitario: 20.00, precoCento: null, desc: "Carne bovina, arroz, feijão carioca, legumes.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Escondidinho", precoUnitario: 22.00, precoCento: null, desc: "Carne bovina ou frango, purê de batatas salpicado com queijo.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Frango Grelhado", precoUnitario: 20.00, precoCento: null, desc: "Filé grelhado, arroz, feijão carioca, mix de legumes.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Frango em Tiras", precoUnitario: 20.00, precoCento: null, desc: "Tiras de frango grelhado, arroz à grega.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Strogonoff", precoUnitario: 24.00, precoCento: null, desc: "Carne ou frango, arroz, batata assada.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
         { nome: "Marmita Gourmet: Filé Suíno", precoUnitario: 35.00, precoCento: null, desc: "Filé mignon suíno ao molho de cerveja, arroz com brócolis.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
         { nome: "Marmita Gourmet: Salmão", precoUnitario: 42.00, precoCento: null, desc: "Posta de salmão ao molho de maracujá, arroz à grega.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" }
     ],
     leves: [
-        { nome: "Lanche Natural: Atum", precoUnitario: 20.00, precoCento: null, desc: "Patê atum defumado, alface americana, tomate, cenoura, cebola roxa.", foto: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Lanche Natural: Frango", precoUnitario: 20.00, precoCento: null, desc: "Patê frango desfiado, alface americana, cenoura, tomate, cebola roxa.", foto: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Lanche Natural: Peito de Peru", precoUnitario: 20.00, precoCento: null, desc: "Peito de peru, alface americana, tomate, cenoura, ricota.", foto: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Salada: Atum", precoUnitario: 20.00, precoCento: null, desc: "Atum defumado, mix de folhas, tomate, cenoura, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Salada: Frango", precoUnitario: 20.00, precoCento: null, desc: "Frango desfiado, mix de folhas, cenoura, pepino, tomate, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Salada: Macarrão", precoUnitario: 20.00, precoCento: null, desc: "Atum defumado ou frango desfiado, macarrão fusili, tomate, cenoura, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Molho: Limão", precoUnitario: 5.00, precoCento: null, desc: "Molho especial à base de limão.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Molho: Iogurte", precoUnitario: 5.00, precoCento: null, desc: "Molho leve e cremoso de iogurte.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Molho: Mostarda e Mel", precoUnitario: 5.00, precoCento: null, desc: "Clássica combinação agridoce de mostarda e mel.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Molho: Maionese Verde", precoUnitario: 5.00, precoCento: null, desc: "Maionese verde artesanal temperada.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" }
+        { nome: "Lanche de Atum", precoUnitario: 20.00, precoCento: null, desc: "Patê atum defumado, alface americana, tomate, cenoura, cebola roxa.", foto: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Lanche de Frango", precoUnitario: 20.00, precoCento: null, desc: "Patê frango desfiado, alface americana, cenoura, tomate, cebola roxa.", foto: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Lanche de Peito de Peru", precoUnitario: 20.00, precoCento: null, desc: "Peito de peru, alface americana, tomate, cenoura, ricota.", foto: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Salada de Atum", precoUnitario: 20.00, precoCento: null, desc: "Atum defumado, mix de folhas, tomate, cenoura, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Salada de Frango", precoUnitario: 20.00, precoCento: null, desc: "Frango desfiado, mix de folhas, cenoura, pepino, tomate, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Salada de Macarrão", precoUnitario: 20.00, precoCento: null, desc: "Atum defumado ou frango desfiado, macarrão fusili, tomate, cenoura, cebola roxa, molho.", foto: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Molho de Limão", precoUnitario: 5.00, precoCento: null, desc: "Molho especial à base de limão.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Molho de Iogurte", precoUnitario: 5.00, precoCento: null, desc: "Molho leve e cremoso de iogurte.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Molho de Mostarda e Mel", precoUnitario: 5.00, precoCento: null, desc: "Clássica combinação agridoce de mostarda e mel.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Molho Maionese Verde", precoUnitario: 5.00, precoCento: null, desc: "Maionese verde artesanal temperada.", foto: "https://images.unsplash.com/photo-1472393365320-db77a5595c2f?auto=format&fit=crop&w=150&q=80" }
     ],
     paes: [
-        { nome: "Pão de Alecrim ", precoUnitario: 24.00, precoCento: null, desc: "Massa fofinha com delocioso aroma e sabor do Alecrim.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Baguete Recheada Frango", precoUnitario: 14.00, precoCento: null, desc: "Crocância perfeita com miolo leve.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Roscas Doces: Coco", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce sabor coco.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Roscas Doces: Ricota com frutas", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce recheada com ricota e frutas.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Roscas Doces: Romeu e Julieta", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce sabor goiabada com queijo.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Roscas Salgadas: Berinjela com ricota", precoUnitario: 110.00, precoCento: null, desc: "Rosca artesanal salgada recheada com berinjela e ricota.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Roscas Salgadas: Espinafre com ricota e nozes", precoUnitario: 110.00, precoCento: null, desc: "Rosca artesanal salgada recheada com espinafre, ricota e nozes.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Roscas Salgadas: Linguiça portuguesa", precoUnitario: 110.00, precoCento: null, desc: "Rosca artesanal salgada recheada com linguiça portuguesa.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" }
+        { nome: "Pão de Alecrim", precoUnitario: 24.00, precoCento: null, desc: "Massa fofinha com delicioso aroma e sabor do Alecrim.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Baguete Recheada de Frango", precoUnitario: 14.00, precoCento: null, desc: "Crocância perfeita com miolo leve e recheio suculento.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Rosca de Coco", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce sabor coco.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Rosca de Ricota com Frutas", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce recheada com ricota e frutas.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Rosca Romeu e Julieta", precoUnitario: 90.00, precoCento: null, desc: "Rosca artesanal doce sabor goiabada com queijo.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Rosca de Berinjela com Ricota", precoUnitario: 110.00, precoCento: null, desc: "Rosca artesanal salgada recheada com berinjela e ricota.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Rosca de Espinafre com Ricota e Nozes", precoUnitario: 110.00, precoCento: null, desc: "Rosca artesanal salgada recheada com espinafre, ricota e nozes.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Rosca de Linguiça Portuguesa", precoUnitario: 110.00, precoCento: null, desc: "Rosca artesanal salgada recheada com linguiça portuguesa.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" }
     ],
     pets: [
         { nome: "Biscoito Integral de Abóbora", precoUnitario: 14.00, precoCento: null, desc: "Sem conservantes, saudável para cães.", foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" }
     ],
-    sazonais: [
-        { nome: "Panetone Artesanal Trançado", precoUnitario: 65.00, precoCento: null, desc: "Disponível apenas sob encomenda.", foto: "https://images.unsplash.com/photo-1512414472151-512c06cfb0b3?auto=format&fit=crop&w=150&q=80" }
+    especiais: [
+        // ==========================================
+        // TEMPORADA: FIM DE ANO (Natal e Ano Novo)
+        // Abertura: 15 de Novembro | Fechamento: 31 de Dezembro
+        // ==========================================
+        { 
+            nome: "Ceia Completa de Fim de Ano (Sob Encomenda)", 
+            precoUnitario: 450.00, 
+            inicioMes: 11, inicioDia: 15, 
+            fimMes: 12, fimDia: 31, 
+            desc: "Cardápio especial sob encomenda para Natal ou Ano Novo. Consulte pratos e porções disponíveis.", 
+            foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Panetone Artesanal Especial (500g)", 
+            precoUnitario: 75.00, 
+            inicioMes: 11, inicioDia: 15, 
+            fimMes: 12, fimDia: 31, 
+            desc: "Panetone de fabricação própria, extremamente macio, aromático e recheado de sabor.", 
+            foto: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Tostadas de Panetone Exclusivas", 
+            precoUnitario: 65.00, 
+            inicioMes: 11, inicioDia: 15, 
+            fimMes: 12, fimDia: 31, 
+            desc: "Nossas exclusivas tostadas artesanais feitas com panetone de fabricação própria. Edição limitada de fim de ano[cite: 1].", 
+            foto: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Rosca Natalina Artesanal", 
+            precoUnitario: 85.00, 
+            inicioMes: 11, inicioDia: 15, 
+            fimMes: 12, fimDia: 31, 
+            desc: "Rosca artesanal festiva decorada, perfeita para a mesa de Natal ou café da manhã.", 
+            foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Kit Natalino (Panetone + Mini Geleias)", 
+            precoUnitario: 110.00, 
+            inicioMes: 11, inicioDia: 15, 
+            fimMes: 12, fimDia: 31, 
+            desc: "Panetone artesanal acompanhado de caixa com 4 mini geleias artesanais variadas.", 
+            foto: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=150&q=80" 
+        },
+
+        // ==========================================
+        // TEMPORADA: DIA DAS MÃES (Segundo domingo de Maio)
+        // Abertura: 20 de Abril | Fechamento: 10 de Maio
+        // ==========================================
+        { 
+            nome: "Cesta Especial Café da Manhã - Dia das Mães", 
+            precoUnitario: 180.00, 
+            inicioMes: 4, inicioDia: 20, 
+            fimMes: 5, fimDia: 10, 
+            desc: "Cesta artesanal afetiva e completa sob encomenda para presentear no Dia das Mães.", 
+            foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" 
+        },
+
+        // ==========================================
+        // TEMPORADA: DIA DOS NAMORADOS (12 de Junho)
+        // Abertura: 20 de Maio | Fechamento: 12 de Junho
+        // ==========================================
+        { 
+            nome: "Kit Romântico Tábua de Frios & Vinho - Namorados", 
+            precoUnitario: 240.00, 
+            inicioMes: 5, inicioDia: 20, 
+            fimMes: 6, fimDia: 12, 
+            desc: "Combo especial com vinho selecionado, queijos finos, pães rústicos e doces para dois.", 
+            foto: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=150&q=80" 
+        },
+
+        // ==========================================
+        // TEMPORADA: FESTA JUNINA (Junho)
+        // Abertura: 1º de Junho | Fechamento: 30 de Junho
+        // ==========================================
+        { 
+            nome: "Kit Quitutes Arraiá Pitadavivi", 
+            precoUnitario: 130.00, 
+            inicioMes: 6, inicioDia: 1, 
+            fimMes: 6, fimDia: 30, 
+            desc: "Seleção especial de bolos rústicos, doces típicos artesanais e quitutes juninos.", 
+            foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" 
+        },
+
+        // ==========================================
+        // TEMPORADA: DIA DOS PAIS (Segundo domingo de Agosto)
+        // Abertura: 20 de Julho | Fechamento: 10 de Agosto
+        // ==========================================
+        { 
+            nome: "Kit Especial Dia dos Pais (Aperitivos & Cervejas)", 
+            precoUnitario: 160.00, 
+            inicioMes: 7, inicioDia: 20, 
+            fimMes: 8, fimDia: 10, 
+            desc: "Kit artesanal com cervejas especiais, pães rústicos, antipastos e petiscos selecionados.", 
+            foto: "https://images.unsplash.com/photo-1608270105740-23a54d550e1d?auto=format&fit=crop&w=150&q=80" 
+        },
+
+        // ==========================================
+        // TEMPORADA: DIA DAS CRIANÇAS E PROFESSORES (Outubro)
+        // Abertura: 20 de Setembro | Fechamento: 15 de Outubro
+        // ==========================================
+        { 
+            nome: "Caixa Presenteável Doce Afeto (Professores / Crianças)", 
+            precoUnitario: 85.00, 
+            inicioMes: 9, inicioDia: 20, 
+            fimMes: 10, fimDia: 15, 
+            desc: "Caixa decorada com seleção de doces artesanais e guloseimas para presentear com carinho.", 
+            foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" 
+        },
+
+        // ==========================================
+        // KITS FIXOS (Disponíveis o ano todo quando não houver campanha ativa)
+        // ==========================================
+        { 
+            nome: "Caixa Degustação de Doces Finos", 
+            precoUnitario: 95.00, 
+            desc: "Seleção especial sob encomenda dos nossos melhores doces gourmet.", 
+            foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Kit Chá da Tarde Aconchego", 
+            precoUnitario: 140.00, 
+            desc: "Composto por bolo caseiro, geleia artesanal, biscoitos amanteigados e sachês de chá.", 
+            foto: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=150&q=80" 
+        }
     ],
     sobremesas: [
-        { nome: "Doce de Abóbora", precoUnitario: 50.00, precoCento: null, desc: "Doce artesanal caseiro tradicional.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Doce de abóbora com coco", precoUnitario: 55.00, precoCento: null, desc: "Doce artesanal de abóbora com toque de coco fresco.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Doce de banana com cacau", precoUnitario: 55.00, precoCento: null, desc: "Combinação deliciosa e nutritiva de banana com cacau.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Banoffee", precoUnitario: 140.00, precoCento: null, desc: "Torta artesanal de doce de leite, bananas e chantilly.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Pavê (chocolate, maracujá)", precoUnitario: 130.00, precoCento: null, desc: "Camadas cremosas de chocolate ou maracujá.", foto: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Pavê nozes", precoUnitario: 150.00, precoCento: null, desc: "Pavê especial recheado com nozes selecionadas.", foto: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Pudim de leite", precoUnitario: 95.00, precoCento: null, desc: "Pudim de leite condensado tradicional, liso e com calda de caramelo.", foto: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Pudim tipo caçarola", precoUnitario: 90.00, precoCento: null, desc: "Pudim com textura rústica e sabor caseiro incomparável.", foto: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Surpresa de uva ou morango", precoUnitario: 130.00, precoCento: null, desc: "Doce fino recheado com fruta fresca selecionada.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Torta (limão, maçã, morango)", precoUnitario: 110.00, precoCento: null, desc: "Torta fina disponível nos sabores limão, maçã ou morango.", foto: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Torta (chocolate, chocolate c/nozes)", precoUnitario: 150.00, precoCento: null, desc: "Torta rica em chocolate puro, com opção com nozes.", foto: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=150&q=80" }
-    ]
+        { nome: "Abóbora (500g)", precoUnitario: 50.00, precoCento: null, desc: "Doce artesanal caseiro tradicional.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Abóbora com Coco (500g)", precoUnitario: 55.00, precoCento: null, desc: "Doce artesanal de abóbora com toque de coco fresco.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Banana com Cacau (500g)", precoUnitario: 55.00, precoCento: null, desc: "Combinação deliciosa e nutritiva de banana com cacau.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Banoffee (Aprox. 1kg)", precoUnitario: 140.00, precoCento: null, desc: "Torta artesanal de doce de leite, bananas e chantilly.", foto: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Pavê de Chocolate ou Maracujá (Aprox. 1kg)", precoUnitario: 130.00, precoCento: null, desc: "Camadas cremosas de chocolate ou maracujá.", foto: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Pavê de Nozes (Aprox. 1kg)", precoUnitario: 150.00, precoCento: null, desc: "Pavê especial recheado com nozes selecionadas.", foto: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Pudim de Leite Condensado (Inteiro)", precoUnitario: 95.00, precoCento: null, desc: "Pudim tradicional, liso e com calda de caramelo.", foto: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Pudim Tipo Caçarola (Inteiro)", precoUnitario: 90.00, precoCento: null, desc: "Pudim com textura rústica e sabor caseiro incomparável.", foto: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Surpresa de Uva ou Morango (Aprox. 1kg)", precoUnitario: 130.00, precoCento: null, desc: "Doce fino recheado com fruta fresca selecionada.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Torta de Limão, Maçã ou Morango (Inteira)", precoUnitario: 110.00, precoCento: null, desc: "Torta fina disponível nos sabores limão, maçã ou morango.", foto: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Torta de Chocolate / Nozes (Inteira)", precoUnitario: 150.00, precoCento: null, desc: "Torta rica em chocolate puro, com opção com nozes.", foto: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=150&q=80" }
+    ],
+
+    bebidas: [
+        { nome: "Espumante Brut Premium (750ml)", precoUnitario: 85.00, precoCento: null, desc: "Espumante elegante com notas cítricas. Harmoniza perfeitamente com tábuas de frios, castanhas e massas leves.", foto: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Espumante Moscatel Doce (750ml)", precoUnitario: 80.00, precoCento: null, desc: "Bebida leve e adocicada. Ideal para harmonizar com bolos caseiros, tortas de frutas e sobremesas finas.", foto: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Vinho Tinto Fino Seco (750ml)", precoUnitario: 70.00, precoCento: null, desc: "Rótulo encorpado com notas de frutas vermelhas. Perfeito para acompanhar massas ao molho sugo, carne e petiscos salgados.", foto: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Vinho Tinto Suave (750ml)", precoUnitario: 65.00, precoCento: null, desc: "Vinho macio e agradável ao paladar. Harmoniza muito bem com pratos agridoces e tortas rústicas.", foto: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Vinho Branco Fino Seco (750ml)", precoUnitario: 70.00, precoCento: null, desc: "Refrescante e frutado. Excelente opção para harmonizar com aves grelhadas, saladas e tortas de limão.", foto: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Vinho Rosé Fino (750ml)", precoUnitario: 72.00, precoCento: null, desc: "Versátil e delicado. Harmoniza perfeitamente com lanches naturais, quiches e tábuas de frios finos.", foto: "https://images.unsplash.com/photo-1558001377-765f0423d9b4?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Gin Importado (750ml)", precoUnitario: 120.00, precoCento: null, desc: "Gin clássico para drinks refrescantes. Harmoniza perfeitamente com tábuas de queijos finos, castanhas e frutas cítricas.", foto: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Uísque Blended Scotch (750ml)", precoUnitario: 140.00, precoCento: null, desc: "Uísque sofisticado de sabor marcante. Ideal para compor kits de presentes especiais e acompanhar petiscos nozes e amendoins.", foto: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Cerveja Artesanal IPA (500ml)", precoUnitario: 28.00, precoCento: null, desc: "Cerveja forte com amargor equilibrado e notas cítricas. Harmoniza com pratos condimentados e salgados assados.", foto: "https://images.unsplash.com/photo-1608270105740-23a54d550e1d?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Cerveja Artesanal Stout (500ml)", precoUnitario: 28.00, precoCento: null, desc: "Cerveja escura com notas de chocolate e café. Combina perfeitamente com bolos de chocolate e sobremesas à base de cacau.", foto: "https://images.unsplash.com/photo-1608270105740-23a54d550e1d?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Licor Fino Artesanal (375ml)", precoUnitario: 55.00, precoCento: null, desc: "Bebida cremosa e adocicada. Excelente companhia para acompanhar docinhos finos, brigadeiros gourmet e café.", foto: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=150&q=80" },
+        { nome: "Café Especial Gourmet em Grãos ou Moído (250g)", precoUnitario: 35.00, precoCento: null, desc: "Café artesanal especial de torra média. Essencial para cestas de café da manhã, harmonizando com bolos e pães.", foto: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=150&q=80" }
+    ],
 };
 
 // CONSTANTES E ESTADO GLOBAL DA COMPRA
@@ -187,7 +335,7 @@ function abrirModal(categoria) {
         antepastos: "Antepastos e Patês (150g)", 
         bolos: "Bolos Caseiros & Festa", 
         docinhos: "Docinhos para Festas",
-        geleias: "Geleias & Acompanhamentos", 
+        geleias: "Geleias & Acompanhamentos (150g)", 
         kits: "Kits & Presentes", 
         marmitas: "Marmitas Caseiras & Gourmet",
         leves: "Lanches Naturais, Saladas & Molhos",
