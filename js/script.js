@@ -141,133 +141,239 @@ const bancoSabores = {
         { nome: "Rosca de Linguiça Portuguesa", precoUnitario: 110.00, precoCento: null, desc: "Rosca artesanal salgada recheada com linguiça portuguesa.", foto: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=150&q=80" }
     ],
     pets: [
-        { nome: "Biscoito Integral de Abóbora", precoUnitario: 14.00, precoCento: null, desc: "Sem conservantes, saudável para cães.", foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" }
+        { 
+            nome: "Bolo Pet Gourmet", 
+            precoUnitario: 65.00, 
+            opcoesTamanho: [
+                { nome: "P (300g)", preco: 65.00 },
+                { nome: "M (600g)", preco: 105.00 }
+            ],
+            desc: "Confeitaria 100% natural & funcional[cite: 10]. Sabores disponíveis: Morango, Maçã, Banana e Blueberry[cite: 10]. Seguro para pets (sem corantes, conservantes ou açúcar)[cite: 10].", 
+            foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Muffin Pet Gourmet (100g)", 
+            precoUnitario: 19.00, 
+            desc: "Muffin funcional artesanal para cães. Sabores disponíveis: Morango, Maçã, Banana e Blueberry[cite: 10].", 
+            foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Biscoitos Crocantes Pet (100g)", 
+            precoUnitario: 25.00, 
+            desc: "Biscoitos crocantes artesanais[cite: 10]. Opções: Maçã c/ Beterraba, Banana c/ Batata-Doce, Frango c/ Abóbora ou Carne c/ Batata-Doce[cite: 10].", 
+            foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Brigaudeiros Artesanais Pet (Mín. 6 un.)", 
+            precoUnitario: 5.00, 
+            desc: "Deliciosos docinhos pet-friendly (valor unitário, pedido mínimo de 6 unidades)[cite: 10].", 
+            foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Kit Festa Pet P", 
+            precoUnitario: 169.00, 
+            desc: "Inclui: 1 Bolo P + 2 Muffins + 6 Brigaudeiros + 1 pacote de biscoitos[cite: 10]. Ideal para comemorações de 1 a 3 cães[cite: 10].", 
+            foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Kit Festa Pet M", 
+            precoUnitario: 299.00, 
+            desc: "Inclui: 1 Bolo M + 4 Muffins + 12 Brigaudeiros + 2 pacotes de biscoitos[cite: 10]. Ideal para festas de 4 a 8 cães[cite: 10].", 
+            foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Kit Festa Pet G", 
+            precoUnitario: 389.00, 
+            desc: "Inclui: 1 Bolo M (600g) + 6 Muffins + 18 Brigaudeiros + 3 pacotes de biscoitos. Ideal para grandes festas ou cães de porte G.", 
+            foto: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=150&q=80" 
+        }
     ],
     especiais: [
-        // ==========================================
-        // TEMPORADA: FIM DE ANO (Natal e Ano Novo)
-        // Abertura: 15 de Novembro | Fechamento: 31 de Dezembro
-        // ==========================================
         { 
-            nome: "Ceia Completa de Fim de Ano (Sob Encomenda)", 
-            precoUnitario: 450.00, 
-            inicioMes: 11, inicioDia: 15, 
-            fimMes: 12, fimDia: 31, 
-            desc: "Cardápio especial sob encomenda para Natal ou Ano Novo. Consulte pratos e porções disponíveis.", 
+            nome: "Kit Trenó (Geleia Morango 150g + Tostada)", 
+            precoUnitario: 75.00, 
+            desc: "Kit presenteável com geleia artesanal de morango (150g) acompanhada de tostadas de panetone.", 
+            foto: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Kit Rena (Geleia Morango 150g + Tostada + Chocotone 500g)", 
+            precoUnitario: 150.00, 
+            desc: "Kit festivo contendo geleia artesanal de morango (150g), tostadas de panetone e 1 chocotone artesanal de 500g.", 
+            foto: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Kit Noel (Geleia + Tostada + Chocotone 500g + Antepasto)", 
+            precoUnitario: 180.00, 
+            desc: "Kit presente completo com geleia de morango (150g), tostadas, chocotone artesanal (500g) e antepasto italiano artesanal.", 
+            foto: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Cesta Natalina Pitadavivi", 
+            precoUnitario: 100.00, 
+            opcoesTamanho: [
+                { nome: "Tamanho P", preco: 100.00 },
+                { nome: "Tamanho M", preco: 170.00 },
+                { nome: "Tamanho G", preco: 210.00 }
+            ],
+            desc: "Cesta artesanal recheada de delícias natalinas da casa. Disponível nos tamanhos P, M ou G.", 
             foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Panetone Artesanal Especial (500g)", 
-            precoUnitario: 75.00, 
-            inicioMes: 11, inicioDia: 15, 
-            fimMes: 12, fimDia: 31, 
-            desc: "Panetone de fabricação própria, extremamente macio, aromático e recheado de sabor.", 
+            nome: "Kit Confeiteiro Natalino", 
+            precoUnitario: 50.00, 
+            desc: "Kit interativo para confeitar e se divertir em família no Natal.", 
+            foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Kit Mini Geleias (4 Unidades Sortidas - 240g)", 
+            precoUnitario: 40.00, 
+            desc: "Caixa presenteável com seleção de 4 mini geleias artesanais sortidas.", 
+            foto: "https://images.unsplash.com/photo-1587735243615-c03f25c51445?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Caixinha Mini Tones (6 Unidades Sortidas)", 
+            precoUnitario: 35.00, 
+            desc: "Seleção com 6 mini panetones artesanais em sabores variados.", 
             foto: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Tostadas de Panetone Exclusivas", 
-            precoUnitario: 65.00, 
-            inicioMes: 11, inicioDia: 15, 
-            fimMes: 12, fimDia: 31, 
-            desc: "Nossas exclusivas tostadas artesanais feitas com panetone de fabricação própria. Edição limitada de fim de ano[cite: 1].", 
+            nome: "Tostadas Exclusivas de Panetone", 
+            precoUnitario: 35.00, 
+            desc: "Nossas crocantes e exclusivas tostadas artesanais feitas com panetone de fabricação própria.", 
             foto: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Rosca Natalina Artesanal", 
-            precoUnitario: 85.00, 
-            inicioMes: 11, inicioDia: 15, 
-            fimMes: 12, fimDia: 31, 
-            desc: "Rosca artesanal festiva decorada, perfeita para a mesa de Natal ou café da manhã.", 
-            foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" 
+            nome: "Panetone Tradicional ou Chocotone", 
+            precoUnitario: 70.00, 
+            opcoesTamanho: [
+                { nome: "100g", preco: 15.00 },
+                { nome: "250g", preco: 35.00 },
+                { nome: "500g", preco: 70.00 }
+            ],
+            desc: "Panetone ou Chocotone artesanal de fabricação própria. Escolha o tamanho ideal.", 
+            foto: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=150&q=80" 
         },
         { 
-            nome: "Kit Natalino (Panetone + Mini Geleias)", 
-            precoUnitario: 110.00, 
-            inicioMes: 11, inicioDia: 15, 
-            fimMes: 12, fimDia: 31, 
-            desc: "Panetone artesanal acompanhado de caixa com 4 mini geleias artesanais variadas.", 
-            foto: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=150&q=80" 
+            nome: "Panetone Recheado Gourmet", 
+            precoUnitario: 80.00, 
+            opcoesTamanho: [
+                { nome: "250g", preco: 40.00 },
+                { nome: "500g", preco: 80.00 }
+            ],
+            desc: "Recheios gourmet à escolha: Chocolate, Café, Goiabada ou Maracujá. Escolha o tamanho.", 
+            foto: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=150&q=80" 
         },
-
-        // ==========================================
-        // TEMPORADA: DIA DAS MÃES (Segundo domingo de Maio)
-        // Abertura: 20 de Abril | Fechamento: 10 de Maio
-        // ==========================================
         { 
-            nome: "Cesta Especial Café da Manhã - Dia das Mães", 
-            precoUnitario: 180.00, 
-            inicioMes: 4, inicioDia: 20, 
-            fimMes: 5, fimDia: 10, 
-            desc: "Cesta artesanal afetiva e completa sob encomenda para presentear no Dia das Mães.", 
+            nome: "Panetone Recheado Premium", 
+            precoUnitario: 120.00, 
+            opcoesTamanho: [
+                { nome: "250g", preco: 60.00 },
+                { nome: "500g", preco: 120.00 }
+            ],
+            desc: "Recheios especiais: Doce de Leite com Nozes ou Pistache. Escolha o tamanho.", 
+            foto: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Peru Assado com Manteiga de Ervas (3kg)", 
+            precoUnitario: 360.00, 
+            desc: "Peru marinado e assado lentamente com manteiga de ervas finas (3kg).", 
             foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" 
         },
-
-        // ==========================================
-        // TEMPORADA: DIA DOS NAMORADOS (12 de Junho)
-        // Abertura: 20 de Maio | Fechamento: 12 de Junho
-        // ==========================================
         { 
-            nome: "Kit Romântico Tábua de Frios & Vinho - Namorados", 
-            precoUnitario: 240.00, 
-            inicioMes: 5, inicioDia: 20, 
-            fimMes: 6, fimDia: 12, 
-            desc: "Combo especial com vinho selecionado, queijos finos, pães rústicos e doces para dois.", 
-            foto: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=150&q=80" 
+            nome: "Salmão ao Molho de Maracujá (1kg)", 
+            precoUnitario: 250.00, 
+            desc: "Filé de salmão grelhado regado com molho artesanal refinado de maracujá (1kg).", 
+            foto: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=150&q=80" 
         },
-
-        // ==========================================
-        // TEMPORADA: FESTA JUNINA (Junho)
-        // Abertura: 1º de Junho | Fechamento: 30 de Junho
-        // ==========================================
         { 
-            nome: "Kit Quitutes Arraiá Pitadavivi", 
-            precoUnitario: 130.00, 
-            inicioMes: 6, inicioDia: 1, 
-            fimMes: 6, fimDia: 30, 
-            desc: "Seleção especial de bolos rústicos, doces típicos artesanais e quitutes juninos.", 
+            nome: "Maminha na Manteiga de Ervas (1kg)", 
+            precoUnitario: 200.00, 
+            desc: "Maminha nobre marinada e assada com manteiga aromática de ervas (1kg).", 
+            foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Tender ao Molho de Mostarda, Mel e Cerveja Preta (1kg)", 
+            precoUnitario: 200.00, 
+            desc: "Tender fatiado glaceado no molho agridoce especial de mostarda, mel e cerveja preta (1kg).", 
+            foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Lombo Recheado com Farofa (1kg)", 
+            precoUnitario: 180.00, 
+            desc: "Lombo suíno recheado com farofa em leito de cebolas ao molho da cocção (1kg).", 
+            foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Pernil Assado com Batata Bolinha ao Alecrim (1kg)", 
+            precoUnitario: 150.00, 
+            desc: "Pernil suíno assado e suculento, acompanhado de batatas bolinha temperadas com alecrim (1kg).", 
+            foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Cuscuz Marroquino Festivo (500g)", 
+            precoUnitario: 80.00, 
+            desc: "Cuscuz marroquino perfumado com castanhas, ingredientes selecionados e especiarias (500g).", 
+            foto: "https://images.unsplash.com/photo-1541518763669-27fef04b14da?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Salpicão Especial de Frango (500g)", 
+            precoUnitario: 80.00, 
+            desc: "Salpicão artesanal cremoso com frango desfiado, vegetais frescos e milho (500g).", 
+            foto: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Caponata de Berinjela ou Abobrinha (500g)", 
+            precoUnitario: 60.00, 
+            desc: "Caponata artesanal rica em azeite, pimentões e temperos da casa (500g).", 
+            foto: "https://images.unsplash.com/photo-1541518763669-27fef04b14da?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Maionese Artesanal Festiva (500g)", 
+            precoUnitario: 60.00, 
+            desc: "Salada de maionese caseira cremosa com batatas e legumes selecionados (500g).", 
+            foto: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Farofa Tradicional ou Natalina (500g)", 
+            precoUnitario: 50.00, 
+            desc: "Farofa artesanal crocante com bacon, linguiça e frutas secas (500g).", 
+            foto: "https://images.unsplash.com/photo-1541518763669-27fef04b14da?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Lentilha da Sorte / Salada de Lentilha (500g)", 
+            precoUnitario: 50.00, 
+            desc: "Prato tradicional de lentilha bem temperada para o Ano Novo (500g).", 
+            foto: "https://images.unsplash.com/photo-1541518763669-27fef04b14da?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Arroz à Grega, Natalino ou com Lentilha (500g)", 
+            precoUnitario: 40.00, 
+            desc: "Arroz soltinho e colorido temperado com passas, cenoura e pimentões ou lentilhas (500g).", 
+            foto: "https://images.unsplash.com/photo-1541518763669-27fef04b14da?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Sobremesa Especial (Bombom Aberto, Banana Pudding ou Maracujá com Chocolate)", 
+            precoUnitario: 105.00, 
+            desc: "Travessa festiva generosa de 900g a 1.1kg. Sabores: Bombom de Uva/Morango, Banana Pudding ou Maracujá com Chocolate.", 
+            foto: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Pudim de Leite Condensado Tradicional", 
+            precoUnitario: 80.00, 
+            desc: "Pudim artesanal extremamente cremoso sem furinhos com calda de caramelo perfeita.", 
+            foto: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Torta de Maçã Festiva", 
+            precoUnitario: 50.00, 
+            desc: "Torta artesanal de maçã aromatizada com canela e massa folhada / amanteigada.", 
+            foto: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=150&q=80" 
+        },
+        { 
+            nome: "Rosca Natalina de Frutas Cristalizadas", 
+            precoUnitario: 45.00, 
+            desc: "Massa fofinha artesanal recheada com ricota e frutas cristalizadas, exclusiva para a mesa de Natal.", 
             foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80" 
-        },
-
-        // ==========================================
-        // TEMPORADA: DIA DOS PAIS (Segundo domingo de Agosto)
-        // Abertura: 20 de Julho | Fechamento: 10 de Agosto
-        // ==========================================
-        { 
-            nome: "Kit Especial Dia dos Pais (Aperitivos & Cervejas)", 
-            precoUnitario: 160.00, 
-            inicioMes: 7, inicioDia: 20, 
-            fimMes: 8, fimDia: 10, 
-            desc: "Kit artesanal com cervejas especiais, pães rústicos, antipastos e petiscos selecionados.", 
-            foto: "https://images.unsplash.com/photo-1608270105740-23a54d550e1d?auto=format&fit=crop&w=150&q=80" 
-        },
-
-        // ==========================================
-        // TEMPORADA: DIA DAS CRIANÇAS E PROFESSORES (Outubro)
-        // Abertura: 20 de Setembro | Fechamento: 15 de Outubro
-        // ==========================================
-        { 
-            nome: "Caixa Presenteável Doce Afeto (Professores / Crianças)", 
-            precoUnitario: 85.00, 
-            inicioMes: 9, inicioDia: 20, 
-            fimMes: 10, fimDia: 15, 
-            desc: "Caixa decorada com seleção de doces artesanais e guloseimas para presentear com carinho.", 
-            foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" 
-        },
-
-        // ==========================================
-        // KITS FIXOS (Disponíveis o ano todo quando não houver campanha ativa)
-        // ==========================================
-        { 
-            nome: "Caixa Degustação de Doces Finos", 
-            precoUnitario: 95.00, 
-            desc: "Seleção especial sob encomenda dos nossos melhores doces gourmet.", 
-            foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80" 
-        },
-        { 
-            nome: "Kit Chá da Tarde Aconchego", 
-            precoUnitario: 140.00, 
-            desc: "Composto por bolo caseiro, geleia artesanal, biscoitos amanteigados e sachês de chá.", 
-            foto: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=150&q=80" 
         }
     ],
     sobremesas: [
@@ -283,7 +389,6 @@ const bancoSabores = {
         { nome: "Torta de Limão, Maçã ou Morango (Inteira)", precoUnitario: 110.00, precoCento: null, desc: "Torta fina disponível nos sabores limão, maçã ou morango.", foto: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=150&q=80" },
         { nome: "Torta de Chocolate / Nozes (Inteira)", precoUnitario: 150.00, precoCento: null, desc: "Torta rica em chocolate puro, com opção com nozes.", foto: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=150&q=80" }
     ],
-
     bebidas: [
         { nome: "Espumante Brut Premium (750ml)", precoUnitario: 85.00, precoCento: null, desc: "Espumante elegante com notas cítricas. Harmoniza perfeitamente com tábuas de frios, castanhas e massas leves.", foto: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=150&q=80" },
         { nome: "Espumante Moscatel Doce (750ml)", precoUnitario: 80.00, precoCento: null, desc: "Bebida leve e adocicada. Ideal para harmonizar com bolos caseiros, tortas de frutas e sobremesas finas.", foto: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=150&q=80" },
@@ -297,7 +402,7 @@ const bancoSabores = {
         { nome: "Cerveja Artesanal Stout (500ml)", precoUnitario: 28.00, precoCento: null, desc: "Cerveja escura com notas de chocolate e café. Combina perfeitamente com bolos de chocolate e sobremesas à base de cacau.", foto: "https://images.unsplash.com/photo-1608270105740-23a54d550e1d?auto=format&fit=crop&w=150&q=80" },
         { nome: "Licor Fino Artesanal (375ml)", precoUnitario: 55.00, precoCento: null, desc: "Bebida cremosa e adocicada. Excelente companhia para acompanhar docinhos finos, brigadeiros gourmet e café.", foto: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=150&q=80" },
         { nome: "Café Especial Gourmet em Grãos ou Moído (250g)", precoUnitario: 35.00, precoCento: null, desc: "Café artesanal especial de torra média. Essencial para cestas de café da manhã, harmonizando com bolos e pães.", foto: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=150&q=80" }
-    ],
+    ]
 };
 
 // CONSTANTES E ESTADO GLOBAL DA COMPRA
@@ -325,11 +430,10 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// CONTROLE DO MODAL DE SELEÇÃO DE SABORES COM ESCOLHA DE UNIDADE OU CENTO
+// CONTROLE DO MODAL DE SELEÇÃO DE SABORES
 function abrirModal(categoria) {
     const modal = document.getElementById('modal-sabores');
     const titulo = document.getElementById('modal-titulo-categoria');
-    const lista = document.getElementById('modal-lista-sabores');
     
     const titulosFormatados = {
         antepastos: "Antepastos e Patês (150g)", 
@@ -340,65 +444,220 @@ function abrirModal(categoria) {
         marmitas: "Marmitas Caseiras & Gourmet",
         leves: "Lanches Naturais, Saladas & Molhos",
         paes: "Pães Artesanais & Roscas", 
-        pets: "Linha Pet Saudável", 
-        sazonais: "Produtos Sazonais", 
-        sobremesas: "Doces e Sobremesas"
+        pets: "Linha Pet Gourmet & Funcional", 
+        bebidas: "Bebidas & Harmonizações", 
+        sobremesas: "Doces e Sobremesas",
+        especiais: "Momentos & Sabores"
     };
 
     if (titulo) {
         titulo.innerText = titulosFormatados[categoria] || "Opções Disponíveis";
     }
 
-    if (lista) {
-        lista.innerHTML = '';
-        const sabores = bancoSabores[categoria] || [];
-        
-        if (sabores.length === 0) {
-            lista.innerHTML = '<p class="empty-text">Nenhum item disponível nesta categoria no momento.</p>';
-        } else {
-            sabores.forEach((sabor, index) => {
-                let opcoesHtml = '';
-                
-                // Se o produto tiver opção de cento, criamos os seletores
-                if (sabor.precoCento) {
-                    opcoesHtml = `
-                        <div class="flavor-options">
-                            <label><input type="radio" name="opcao-${index}" value="unitario" checked onchange="atualizarPrecoModal(${index}, ${sabor.precoUnitario}, ${sabor.precoCento})"> Unidade (R$ ${sabor.precoUnitario.toFixed(2).replace('.', ',')})</label>
-                            <label><input type="radio" name="opcao-${index}" value="cento" onchange="atualizarPrecoModal(${index}, ${sabor.precoUnitario}, ${sabor.precoCento})"> Cento (R$ ${sabor.precoCento.toFixed(2).replace('.', ',')})</label>
-                        </div>
-                    `;
-                }
-
-                lista.innerHTML += `
-                    <div class="flavor-item-row">
-                        <img src="${sabor.foto}" alt="${sabor.nome}" class="flavor-mini-img">
-                        <div class="flavor-details">
-                            <h4>${sabor.nome}</h4>
-                            <p>${sabor.desc}</p>
-                            ${opcoesHtml}
-                        </div>
-                        <div class="flavor-action">
-                            <span id="preco-exibido-${index}" class="price">R$ ${sabor.precoUnitario.toFixed(2).replace('.', ',')}</span>
-                            <button class="btn-add" style="padding: 6px 12px; font-size: 12px;" 
-                                onclick="adicionarItemComOpcao('${sabor.nome}', ${sabor.precoUnitario}, ${sabor.precoCento || 'null'}, ${index}); fecharModal();">
-                                + Adicionar
-                            </button>
-                        </div>
-                    </div>
-                `;
-            });
-        }
+    if (categoria === 'especiais') {
+        renderizarModalEspeciais();
+    } else {
+        renderizarModalPadrao(categoria);
     }
 
     if (modal) {
+        modal.classList.add('active');
         modal.style.display = 'flex';
     }
 }
 
-// ATUALIZAR O PREÇO NA TELA QUANDO O CLIENTE ESCOLHER ENTRE UNIDADE OU CENTO
+// RENDERIZAR CATEGORIAS CONVENCIONAIS DO CARDÁPIO (COM SUPORTE A TAMANHOS COMO PETS/CESTAS)
+function renderizarModalPadrao(categoria) {
+    const lista = document.getElementById('modal-lista-sabores');
+    if (!lista) return;
+
+    lista.innerHTML = '';
+    const sabores = bancoSabores[categoria] || [];
+    
+    if (sabores.length === 0) {
+        lista.innerHTML = '<p class="empty-text">Nenhum item disponível nesta categoria no momento.</p>';
+        return;
+    }
+
+    sabores.forEach((sabor, index) => {
+        let opcoesHtml = '';
+        let precoInicial = sabor.precoUnitario;
+        
+        if (sabor.precoCento) {
+            opcoesHtml = `
+                <div class="flavor-options">
+                    <label><input type="radio" name="opcao-${index}" value="unitario" checked onchange="atualizarPrecoModal(${index}, ${sabor.precoUnitario}, ${sabor.precoCento})"> Unidade (R$ ${sabor.precoUnitario.toFixed(2).replace('.', ',')})</label>
+                    <label><input type="radio" name="opcao-${index}" value="cento" onchange="atualizarPrecoModal(${index}, ${sabor.precoUnitario}, ${sabor.precoCento})"> Cento (R$ ${sabor.precoCento.toFixed(2).replace('.', ',')})</label>
+                </div>
+            `;
+        } else if (sabor.opcoesTamanho && sabor.opcoesTamanho.length > 0) {
+            precoInicial = sabor.opcoesTamanho[0].preco;
+            opcoesHtml = `<div class="flavor-options" style="margin: 6px 0; font-size: 0.85rem;">`;
+            
+            sabor.opcoesTamanho.forEach((opcao, optIdx) => {
+                const isChecked = optIdx === 0 ? 'checked' : '';
+                opcoesHtml += `
+                    <label style="margin-right: 10px; cursor: pointer;">
+                        <input type="radio" name="padrao-opcao-${categoria}-${index}" value="${optIdx}" ${isChecked} 
+                            onchange="atualizarPrecoPadraoComTamanho('${categoria}', ${index}, ${optIdx})"> 
+                        ${opcao.nome} (R$ ${opcao.preco.toFixed(2).replace('.', ',')})
+                    </label>
+                `;
+            });
+            opcoesHtml += `</div>`;
+        }
+
+        lista.innerHTML += `
+            <div class="flavor-item-row">
+                <img src="${sabor.foto}" alt="${sabor.nome}" class="flavor-mini-img">
+                <div class="flavor-details">
+                    <h4>${sabor.nome}</h4>
+                    <p>${sabor.desc}</p>
+                    ${opcoesHtml}
+                </div>
+                <div class="flavor-action">
+                    <span id="preco-exibido-${categoria}-${index}" class="price">R$ ${precoInicial.toFixed(2).replace('.', ',')}</span>
+                    <button class="btn-add" style="padding: 6px 12px; font-size: 12px;" 
+                        onclick="adicionarItemPadraoComOpcao('${categoria}', ${index}); fecharModal();">
+                        + Adicionar
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// ATUALIZAR PREÇO PARA ITENS PADRÃO COM OPÇÃO DE TAMANHO
+function atualizarPrecoPadraoComTamanho(categoria, index, optIdx) {
+    const item = bancoSabores[categoria][index];
+    const spanPreco = document.getElementById(`preco-exibido-${categoria}-${index}`);
+    
+    if (spanPreco && item && item.opcoesTamanho) {
+        const precoSelecionado = item.opcoesTamanho[optIdx].preco;
+        spanPreco.innerText = `R$ ${precoSelecionado.toFixed(2).replace('.', ',')}`;
+    }
+}
+
+// ADICIONAR ITEM PADRÃO CONSIDERANDO TAMANHO OU CENTO
+function adicionarItemPadraoComOpcao(categoria, index) {
+    const item = bancoSabores[categoria][index];
+    let nomeFinal = item.nome;
+    let precoFinal = item.precoUnitario;
+
+    if (item.precoCento) {
+        const radioCento = document.querySelector(`input[name="opcao-${index}"][value="cento"]`);
+        if (radioCento && radioCento.checked) {
+            precoFinal = item.precoCento;
+            nomeFinal = `${item.nome} (Cento)`;
+        } else {
+            nomeFinal = `${item.nome} (Unidade)`;
+        }
+    } else if (item.opcoesTamanho && item.opcoesTamanho.length > 0) {
+        const radioSelecionado = document.querySelector(`input[name="padrao-opcao-${categoria}-${index}"]:checked`);
+        if (radioSelecionado) {
+            const optIdx = parseInt(radioSelecionado.value);
+            const opcao = item.opcoesTamanho[optIdx];
+            nomeFinal = `${item.nome} (${opcao.nome})`;
+            precoFinal = opcao.preco;
+        }
+    }
+
+    adicionarAoCarrinho(nomeFinal, precoFinal);
+}
+
+// RENDERIZAR O MODAL MOMENTOS & SABORES COM SUPORTE A TAMANHOS (PANETONES E CESTAS)
+function renderizarModalEspeciais() {
+    const container = document.getElementById('modal-lista-sabores');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    // Dica Pitadavivi no topo com link clicável para a categoria Pães
+    const avisoHtml = `
+        <div class="aviso-sazonal" style="grid-column: 1 / -1; background-color: #fff9e6; border-left: 4px solid #d4a373; padding: 12px 16px; margin-bottom: 15px; border-radius: 6px; font-size: 0.9rem; color: #5a3e2b;">
+            💡 <strong>Dica Pitadavivi:</strong> Quer incluir nossas roscas tradicionais da casa na sua ceia? Elas ficam disponíveis o ano todo na aba 
+            <a href="javascript:void(0)" onclick="fecharModalEIrPara('paes')" style="color: #d4a373; font-weight: bold; text-decoration: underline;">Pães</a> do cardápio!
+        </div>
+    `;
+    container.innerHTML += avisoHtml;
+
+    const listaEspeciais = bancoSabores.especiais || [];
+
+    listaEspeciais.forEach((item, index) => {
+        let opcoesHtml = '';
+        let precoInicial = item.precoUnitario;
+
+        if (item.opcoesTamanho && item.opcoesTamanho.length > 0) {
+            precoInicial = item.opcoesTamanho[item.opcoesTamanho.length - 1].preco;
+            opcoesHtml = `<div class="flavor-options" style="margin: 6px 0; font-size: 0.85rem;">`;
+            
+            item.opcoesTamanho.forEach((opcao, optIdx) => {
+                const isChecked = optIdx === item.opcoesTamanho.length - 1 ? 'checked' : '';
+                opcoesHtml += `
+                    <label style="margin-right: 10px; cursor: pointer;">
+                        <input type="radio" name="especial-opcao-${index}" value="${optIdx}" ${isChecked} 
+                            onchange="atualizarPrecoEspecial(${index}, ${optIdx})"> 
+                        ${opcao.nome} (R$ ${opcao.preco.toFixed(2).replace('.', ',')})
+                    </label>
+                `;
+            });
+            opcoesHtml += `</div>`;
+        }
+
+        container.innerHTML += `
+            <div class="flavor-item-row">
+                <img src="${item.foto}" alt="${item.nome}" class="flavor-mini-img">
+                <div class="flavor-details">
+                    <h4>${item.nome}</h4>
+                    <p>${item.desc}</p>
+                    ${opcoesHtml}
+                </div>
+                <div class="flavor-action">
+                    <span id="preco-especial-${index}" class="price">R$ ${precoInicial.toFixed(2).replace('.', ',')}</span>
+                    <button class="btn-add" style="padding: 6px 12px; font-size: 12px;" 
+                        onclick="adicionarEspecialComOpcao(${index}); fecharModal();">
+                        + Adicionar
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// ATUALIZAR PREÇO AO ESCOLHER O TAMANHO NO MODAL ESPECIAIS
+function atualizarPrecoEspecial(index, optIdx) {
+    const item = bancoSabores.especiais[index];
+    const spanPreco = document.getElementById(`preco-especial-${index}`);
+    
+    if (spanPreco && item && item.opcoesTamanho) {
+        const precoSelecionado = item.opcoesTamanho[optIdx].preco;
+        spanPreco.innerText = `R$ ${precoSelecionado.toFixed(2).replace('.', ',')}`;
+    }
+}
+
+// ADICIONAR ITEM ESPECIAL AO CARRINHO CONSIDERANDO O TAMANHO ESCOLHIDO
+function adicionarEspecialComOpcao(index) {
+    const item = bancoSabores.especiais[index];
+    let nomeFinal = item.nome;
+    let precoFinal = item.precoUnitario;
+
+    if (item.opcoesTamanho && item.opcoesTamanho.length > 0) {
+        const radioSelecionado = document.querySelector(`input[name="especial-opcao-${index}"]:checked`);
+        if (radioSelecionado) {
+            const optIdx = parseInt(radioSelecionado.value);
+            const opcao = item.opcoesTamanho[optIdx];
+            nomeFinal = `${item.nome} (${opcao.nome})`;
+            precoFinal = opcao.preco;
+        }
+    }
+
+    adicionarAoCarrinho(nomeFinal, precoFinal);
+}
+
+// ATUALIZAR O PREÇO NA TELA QUANDO O CLIENTE ESCOLHER ENTRE UNIDADE OU CENTO (MODAL PADRÃO ANTIGO)
 function atualizarPrecoModal(index, precoUnit, precoCento) {
     const radioCento = document.querySelector(`input[name="opcao-${index}"][value="cento"]`);
-    const spanPreco = document.getElementById(`preco-exibido-${index}`);
+    const spanPreco = document.getElementById(`preco-exibido-docinhos-${index}`) || document.getElementById(`preco-exibido-${index}`);
     
     if (spanPreco) {
         const precoAtual = (radioCento && radioCento.checked) ? precoCento : precoUnit;
@@ -406,27 +665,22 @@ function atualizarPrecoModal(index, precoUnit, precoCento) {
     }
 }
 
-// ADICIONAR AO CARRINHO CONSIDERANDO A ESCOLHA (UNIDADE OU CENTO)
-function adicionarItemComOpcao(nomeBase, precoUnit, precoCento, index) {
-    let precoFinal = precoUnit;
-    let sufixo = " (Unidade)";
-
-    if (precoCento) {
-        const radioCento = document.querySelector(`input[name="opcao-${index}"][value="cento"]`);
-        if (radioCento && radioCento.checked) {
-            precoFinal = precoCento;
-            sufixo = " (Cento)";
-        }
-    }
-
-    const nomeCompleto = nomeBase + sufixo;
-    adicionarAoCarrinho(nomeCompleto, precoFinal);
-}
-
+// FECHAR MODAL
 function fecharModal() {
     const modal = document.getElementById('modal-sabores');
     if (modal) {
+        modal.classList.remove('active');
         modal.style.display = 'none';
+    }
+}
+
+// FECHAR MODAL E ROLAR ATÉ A CATEGORIA DE DESTINO (PÃES)
+function fecharModalEIrPara(categoriaId) {
+    fecharModal();
+    
+    const elementoDestino = document.getElementById(categoriaId + '-card') || document.getElementById(categoriaId);
+    if (elementoDestino) {
+        elementoDestino.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
 
