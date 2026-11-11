@@ -38,9 +38,9 @@
                 <!-- CARD FLUTUANTE DO CARRINHO -->
                 <div id="carrinho-popover" class="cart-popover">
                     
-                    <!-- BARRA DE FRETE GRÁTIS -->
+                    <!-- BARRA DE PEDIDO MÍNIMO -->
                     <div class="shipping-box">
-                        <p id="shipping-text">Faltam apenas <strong>R$ 150,00</strong> para você ganhar <strong>Frete Grátis!</strong></p>
+                        <p id="shipping-text">Faltam apenas <strong>R$ 100,00</strong> para atingir o valor mínimo do pedido!</p>
                         <div class="progress-bar-bg">
                             <div id="shipping-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
                         </div>
@@ -53,14 +53,27 @@
                         </p>
                     </div>
 
+                    <!-- ESCOLHA DA MODALIDADE (RETIRADA OU ENTREGA) -->
+                    <div class="delivery-mode-section" style="margin: 15px 0; padding: 10px; background: #fdfbf7; border-radius: 8px; border: 1px solid #e6dcc8;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #5a3e2b; font-size: 0.9rem;">📦 Como deseja receber o pedido?</label>
+                        <div style="display: flex; gap: 10px;">
+                            <label style="flex: 1; cursor: pointer; font-size: 0.85rem; padding: 8px; text-align: center; background: #fff9e6; border: 1px solid #d4a373; border-radius: 6px;" id="label-retirada">
+                                <input type="radio" name="tipo-entrega" value="retirada" checked onclick="alternarModalidade('retirada')"> Retirada
+                            </label>
+                            <label style="flex: 1; cursor: pointer; font-size: 0.85rem; padding: 8px; text-align: center; background: #fff; border: 1px solid #ccc; border-radius: 6px;" id="label-entrega">
+                                <input type="radio" name="tipo-entrega" value="entrega" onclick="alternarModalidade('entrega')"> Entrega
+                            </label>
+                        </div>
+                    </div>
+
                     <!-- AGENDAMENTO DE DATA -->
                     <div class="form-group-popover">
-                        <label for="delivery-date">📅 Data de Agendamento</label>
+                        <label for="delivery-date">📅 Data de Agendamento Entrega/ Retirada</label>
                         <input type="date" id="delivery-date">
                     </div>
 
-                    <!-- CALCULAR ENTREGA -->
-                    <div class="calc-delivery-section">
+                    <!-- CALCULAR ENTREGA (Fica oculto por padrão se escolher Retirada) -->
+                    <div id="bloco-calculo-frete" class="calc-delivery-section" style="display: none;">
                         <label for="postal-code">Calcular Entrega</label>
                         <input type="text" id="postal-code" placeholder="00000-000" maxlength="9">
                         
@@ -248,7 +261,7 @@
                 </div>
 
                 <!-- 10. Especiais -->
-                <div class="product-card">
+                <div class="product-card" id="especiais-card">
                     <div class="product-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1549417229-aa67d3263c09?auto=format&fit=crop&w=500&q=80" alt="Especiais" class="product-img">
                     </div>
@@ -294,15 +307,12 @@
     </div>
 
     <!-- RODAPÉ COMPLETO -->
-    <main class="content-wrapper">
-        <!-- rodapé mantido -->
-    </main>
-    <footer class="main-footer">
+    <footer class="main-header" style="margin-top: 40px; padding: 30px 20px; text-align: center;">
         <p>&copy; 2026 Pitadavivi Ltda. | Todos os direitos reservados.</p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/pitadavivi" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/pitadavivi" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/5511987342562" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-links" style="margin-top: 10px;">
+            <a href="https://www.instagram.com/pitadavivi" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: #fff; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/pitadavivi" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: #fff; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/5511987342562" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: #fff; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
 
