@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 
 // Configurações e Regras de Negócio
 const string CEP_ORIGEM = "04254010";
-const decimal VALOR_POR_KM = 2.0m;
+const decimal VALOR_POR_KM = 4.0m;
 const string TOMTOM_KEY = "VVM1ugso9FG0ZK8beliJIFU259BquVuY";
 const double MAX_DISTANCIA_KM = 50.0; // 🛑 Nova regra de limite de distância
 

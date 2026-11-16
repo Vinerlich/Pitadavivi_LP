@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    background: #f9f9f9;
+    background: var(--bg-color);
     color: #4a302a;
     line-height: 1.6;
     display: flex;
@@ -107,17 +107,17 @@ body {
     transform: translateY(-1px);
 }
 
-/* CARD POPOVER / DROPDOWN DO CARRINHO FLUTUANTE */
+/* CARD POPOVER / DROPDOWN DO CARRINHO FLUTUANTE (COMPACTO E ELEGANTE) */
 .cart-popover {
     display: none;
     position: absolute;
     top: calc(100% + 12px);
     right: 0;
-    width: 360px;
+    width: 340px;
     background: #ffffff;
-    border-radius: 20px;
-    padding: 22px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
     border: 1px solid var(--border-color);
     z-index: 1000;
 }
@@ -132,26 +132,26 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* BARRA DE PROGRESSO DE FRETE GRÁTIS NO POPOVER */
+/* BARRA DE PROGRESSO DE PEDIDO MÍNIMO NO POPOVER */
 .shipping-box {
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 14px;
+    border-radius: 12px;
+    padding: 10px 12px;
     text-align: center;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 .shipping-box p {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--dark-brown);
-    line-height: 1.4;
-    margin-bottom: 8px;
+    line-height: 1.35;
+    margin-bottom: 6px;
 }
 
 .progress-bar-bg {
     width: 100%;
-    height: 10px;
+    height: 7px;
     background-color: #e8e2d5;
     border-radius: 10px;
     overflow: hidden;
@@ -165,16 +165,30 @@ body {
 
 /* ÁREA DE ITENS DO CARRINHO */
 .cart-content-area {
-    max-height: 200px;
+    max-height: 180px;
     overflow-y: auto;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    padding-right: 4px;
+}
+
+.cart-content-area::-webkit-scrollbar {
+    width: 5px;
+}
+
+.cart-content-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cart-content-area::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 10px;
 }
 
 .empty-cart-text {
     text-align: center;
     color: var(--text-muted);
-    font-size: 13.5px;
-    margin: 15px 0;
+    font-size: 12.5px;
+    margin: 12px 0;
 }
 
 .cart-items-list {
@@ -188,10 +202,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    padding: 10px 0;
+    gap: 8px;
+    padding: 8px 0;
     border-bottom: 1px solid var(--border-color);
-    font-size: 13.5px;
+    font-size: 13px;
 }
 
 .cart-item-row > span {
@@ -204,7 +218,7 @@ body {
 .cart-item-actions {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -213,13 +227,14 @@ body {
     background: var(--bg-color);
     border: 1px solid var(--border-color);
     border-radius: 6px;
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-weight: bold;
+    font-size: 12px;
     color: var(--dark-brown);
     transition: background 0.2s;
     user-select: none;
@@ -229,27 +244,95 @@ body {
     background-color: var(--primary-yellow);
 }
 
+/* =========================================================
+   ESCOLHA DA MODALIDADE (PÍLULA FINA E ELEGANTE)
+   ========================================================= */
+.delivery-mode-section {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 14px;
+}
+
+.delivery-mode-title {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.delivery-mode-options {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+}
+
+.modality-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    border: none;
+    background: transparent;
+}
+
+/* Esconde completamente a bolinha padrão do radio */
+.modality-pill input[type="radio"] {
+    display: none;
+}
+
+.modality-pill:hover {
+    color: var(--dark-brown);
+}
+
+/* Aba ativa: pílula dourada delicada */
+.modality-pill:has(input[type="radio"]:checked) {
+    background-color: var(--primary-yellow);
+    color: var(--dark-brown);
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(46, 30, 15, 0.12);
+}
+
 /* FORMULÁRIOS INTERNOS DO POPOVER */
 .form-group-popover, .calc-delivery-section {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .form-group-popover label, .calc-delivery-section label {
     display: block;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--dark-brown);
-    margin-bottom: 6px;
+    letter-spacing: 0.4px;
+    color: var(--text-muted);
+    margin-bottom: 5px;
 }
 
 .form-group-popover input, .calc-delivery-section input {
     width: 100%;
-    padding: 10px 12px;
+    padding: 8px 12px;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--dark-brown);
+    background-color: #ffffff;
     outline: none;
+    transition: border-color 0.2s ease;
 }
 
 .form-group-popover input:focus, .calc-delivery-section input:focus {
@@ -262,11 +345,15 @@ body {
     background-color: var(--dark-brown);
     color: #ffffff;
     border: none;
-    padding: 12px;
-    border-radius: 25px;
-    font-size: 14.5px;
+    padding: 10px 16px;
+    border-radius: 22px;
+    font-size: 13.5px;
     font-weight: 700;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
@@ -277,7 +364,7 @@ body {
 
 .btn-calculate {
     margin-top: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
 }
 
 .btn-whatsapp {
@@ -292,8 +379,8 @@ body {
 /* RETORNO DA API DE FRETE */
 .result-box {
     display: none;
-    font-size: 12.5px;
-    padding: 10px;
+    font-size: 12px;
+    padding: 8px 10px;
     border-radius: 8px;
     margin-top: 8px;
 }
@@ -326,7 +413,7 @@ body {
 
 .features-section .features-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Força sempre 3 colunas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
 }
 
@@ -364,10 +451,9 @@ body {
     line-height: 1.35;
 }
 
-/* Ajustes finos para celulares/telas bem pequenas não espremerem demais */
 @media (max-width: 768px) {
     .features-section .features-grid {
-        gap: 8px; /* Reduz espaço entre os cards */
+        gap: 8px;
     }
 
     .features-section .feature-card {
@@ -420,7 +506,7 @@ body {
 
 @media (min-width: 1024px) {
     .products-grid {
-        grid-template-columns: repeat(3, 1fr); /* Trava perfeitamente em 3 colunas, fechando as 4 fileiras de 12 cards sem sobras */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -607,14 +693,15 @@ body {
 
 /* RODAPÉ E REDES SOCIAIS */
 .main-footer { 
+    background-color: var(--dark-brown);
+    color: var(--bg-color);
     text-align: center; 
-    padding: 40px 20px; 
-    font-size: 13px; 
-    color: var(--text-muted); 
+    padding: 35px 20px; 
+    font-size: 13.5px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
     margin-top: auto;
 }
 
@@ -624,21 +711,37 @@ body {
 }
 
 .social-links a {
-    color: var(--dark-brown);
+    color: var(--primary-yellow);
     font-size: 22px;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
-    color: var(--primary-yellow);
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
 /* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
 @media (max-width: 480px) {
     .cart-popover {
-        width: 300px;
-        right: -10px;
+        position: fixed;
+        top: 75px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: calc(100vw - 32px);
+        max-width: 340px;
+        max-height: calc(100vh - 95px);
+        overflow-y: auto;
+    }
+
+    .cart-popover.active {
+        animation: fadeInMobile 0.2s ease-in-out;
+    }
+
+    @keyframes fadeInMobile {
+        from { opacity: 0; transform: translate(-50%, -8px); }
+        to { opacity: 1; transform: translate(-50%, 0); }
     }
 
     .modal-card {

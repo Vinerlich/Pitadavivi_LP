@@ -1,3 +1,6 @@
+// CONFIGURAÇÃO DA API (Fácil de trocar quando publicarmos na nuvem)
+const API_FRETE_URL = "http://localhost:5253/api/frete";
+
 // BANCO DE DADOS COMPLETO E ORGANIZADO POR CATEGORIAS
 const bancoSabores = {
     antepastos: [
@@ -65,7 +68,7 @@ const bancoSabores = {
             foto: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=150&q=80" 
         }
     ],
-   bolos: [
+    bolos: [
         { nome: "Cenoura com Brigadeiro", precoUnitario: 28.00, precoCento: null, desc: "Tradicional bolo caseiro com cobertura vulcão de brigadeiro.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" },
         { nome: "Red Velvet", precoUnitario: 85.00, precoCento: null, desc: "Massa aveludada com recheio de cream cheese.", foto: "./img/RedVelvet.jpg" },
         { nome: "Fubá Cremoso", precoUnitario: 30.00, precoCento: null, desc: "Bolo caseiro com textura cremosa e sabor de infância.", foto: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=150&q=80" },
@@ -77,7 +80,7 @@ const bancoSabores = {
         { nome: "Festa: Prestígio Gourmet", precoUnitario: 95.00, precoCento: null, desc: "Massa de chocolate molhadinha recheada com coco fresco.", foto: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=150&q=80" },
         { nome: "Festa: Abacaxi com Coco", precoUnitario: 90.00, precoCento: null, desc: "Recheio cremoso de coco com pedaços suculentos de abacaxi.", foto: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=150&q=80" }
     ],
-   docinhos: [
+    docinhos: [
         { nome: "Brigadeiro", precoUnitario: 4.00, precoCento: 180.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
         { nome: "Beijinho", precoUnitario: 4.00, precoCento: 180.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
         { nome: "Bicho de pé / Morango", precoUnitario: 4.00, precoCento: 180.00, desc: "Doce tradicional para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "tradicional" },
@@ -92,7 +95,7 @@ const bancoSabores = {
         { nome: "Nozes", precoUnitario: 5.00, precoCento: 220.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" },
         { nome: "Belga", precoUnitario: 5.00, precoCento: 220.00, desc: "Doce especial gourmet para festas.", foto: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=150&q=80", tipo: "especial" }
     ],
-   geleias: [
+    geleias: [
         { nome: "Amora com Manjericão", precoUnitario: 55.00, precoCento: null, desc: "Feita artesanalmente com amoras frescas e um toque aromático de manjericão.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
         { nome: "Damasco", precoUnitario: 55.00, precoCento: null, desc: "Doçura equilibrada e pedaços selecionados de damasco.", foto: "https://images.unsplash.com/photo-1622484211148-7163014a706b?auto=format&fit=crop&w=150&q=80" },
         { nome: "Manga com Maracujá", precoUnitario: 45.00, precoCento: null, desc: "A harmonia perfeita entre a doçura da manga e a acidez do maracujá.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
@@ -101,12 +104,12 @@ const bancoSabores = {
         { nome: "Geleia de Alho", precoUnitario: 50.00, precoCento: null, desc: "Especial para acompanhar petiscos, churrasco.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
         { nome: "Chutney de Cebola Roxa", precoUnitario: 50.00, precoCento: null, desc: "Agridoce sofisticado de cebola roxa para carnes e petiscos.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
         { nome: "Pimenta", precoUnitario: 50.00, precoCento: null, desc: "Geleia agridoce e picante artesanalmente equilibrada, perfeita para queijos e salgados.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" },
-        { nome: "Tomate com Pimenta ", precoUnitario: 50.00, precoCento: null, desc: "Combinação saborosa de tomate artesanal com um toque de pimenta.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" }
+        { nome: "Tomate com Pimenta", precoUnitario: 50.00, precoCento: null, desc: "Combinação saborosa de tomate artesanal com um toque de pimenta.", foto: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&w=150&q=80" }
     ],
     kits: [
         { nome: "Kit Café da Manhã Completo", precoUnitario: 95.00, precoCento: null, desc: "1 Pão, 1 Geleia, 1 Bolo Caseiro pequeno.", foto: "https://images.unsplash.com/photo-1549417229-aa67d3263c09?auto=format&fit=crop&w=150&q=80" }
     ],
-   marmitas: [
+    marmitas: [
         { nome: "Almôndegas de Carne", precoUnitario: 22.00, precoCento: null, desc: "Almôndegas de carne bovina, macarrão fusilli ou purê de batatas, molho ao sugo.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
         { nome: "Berinjela ou Abobrinha Recheada", precoUnitario: 22.00, precoCento: null, desc: "Recheada com carne moída bovina ou frango desfiado, molho ao sugo, arroz.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
         { nome: "Carne com Abobrinha", precoUnitario: 24.00, precoCento: null, desc: "Carne bovina refogada com abobrinha, purê de batatas.", foto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=150&q=80" },
@@ -302,6 +305,7 @@ const VALOR_MINIMO_PEDIDO = 100.00;
 let carrinho = [];
 let valorFreteGlobal = 0;
 let freteCalculadoDaApi = 0;
+let freteJaFoiCalculado = false;
 
 // EXIBIR OU OCULTAR POPOVER DO CARRINHO
 function toggleCarrinho() {
@@ -322,22 +326,16 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// ALTERAR ENTRE MODALIDADE RETIRADA E ENTREGA NA TELA DO CARRINHO
+// ALTERAR ENTRE MODALIDADE RETIRADA E ENTREGA (Estilização delegada ao CSS)
 function alternarModalidade(modo) {
     const blocoFrete = document.getElementById('bloco-calculo-frete');
-    const labelRetirada = document.getElementById('label-retirada');
-    const labelEntrega = document.getElementById('label-entrega');
 
     if (modo === 'retirada') {
         if (blocoFrete) blocoFrete.style.display = 'none';
-        valorFreteGlobal = 0; // Zera a taxa para retirada
-        if (labelRetirada) { labelRetirada.style.borderColor = '#d4a373'; labelRetirada.style.background = '#fff9e6'; }
-        if (labelEntrega) { labelEntrega.style.borderColor = '#ccc'; labelEntrega.style.background = '#fff'; }
+        valorFreteGlobal = 0;
     } else {
         if (blocoFrete) blocoFrete.style.display = 'block';
-        valorFreteGlobal = freteCalculadoDaApi; // Restaura a taxa calculada do CEP se houver
-        if (labelEntrega) { labelEntrega.style.borderColor = '#d4a373'; labelEntrega.style.background = '#fff9e6'; }
-        if (labelRetirada) { labelRetirada.style.borderColor = '#ccc'; labelRetirada.style.background = '#fff'; }
+        valorFreteGlobal = freteCalculadoDaApi;
     }
     atualizarInterfaceCarrinho();
 }
@@ -404,12 +402,12 @@ function renderizarModalPadrao(categoria) {
             `;
         } else if (sabor.opcoesTamanho && sabor.opcoesTamanho.length > 0) {
             precoInicial = sabor.opcoesTamanho[0].preco;
-            opcoesHtml = `<div class="flavor-options" style="margin: 6px 0; font-size: 0.85rem;">`;
+            opcoesHtml = `<div class="flavor-options">`;
             
             sabor.opcoesTamanho.forEach((opcao, optIdx) => {
                 const isChecked = optIdx === 0 ? 'checked' : '';
                 opcoesHtml += `
-                    <label style="margin-right: 10px; cursor: pointer;">
+                    <label>
                         <input type="radio" name="padrao-opcao-${categoria}-${index}" value="${optIdx}" ${isChecked} 
                             onchange="atualizarPrecoPadraoComTamanho('${categoria}', ${index}, ${optIdx})"> 
                         ${opcao.nome} (R$ ${opcao.preco.toFixed(2).replace('.', ',')})
@@ -505,12 +503,12 @@ function renderizarModalEspeciais() {
 
         if (item.opcoesTamanho && item.opcoesTamanho.length > 0) {
             precoInicial = item.opcoesTamanho[item.opcoesTamanho.length - 1].preco;
-            opcoesHtml = `<div class="flavor-options" style="margin: 6px 0; font-size: 0.85rem;">`;
+            opcoesHtml = `<div class="flavor-options">`;
             
             item.opcoesTamanho.forEach((opcao, optIdx) => {
                 const isChecked = optIdx === item.opcoesTamanho.length - 1 ? 'checked' : '';
                 opcoesHtml += `
-                    <label style="margin-right: 10px; cursor: pointer;">
+                    <label>
                         <input type="radio" name="especial-opcao-${index}" value="${optIdx}" ${isChecked} 
                             onchange="atualizarPrecoEspecial(${index}, ${optIdx})"> 
                         ${opcao.nome} (R$ ${opcao.preco.toFixed(2).replace('.', ',')})
@@ -622,6 +620,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 value = value.substring(0, 5) + '-' + value.substring(5, 8);
             }
             e.target.value = value;
+            // Se o cliente editar o CEP depois de calcular, exige novo cálculo
+            freteJaFoiCalculado = false;
         });
     }
 });
@@ -733,18 +733,17 @@ async function calcularFreteEDirecionar() {
     const cepLimpo = inputElement.value.replace(/\D/g, '');
 
     if (!cepLimpo || cepLimpo.length !== 8) {
+        freteJaFoiCalculado = false;
         resultDiv.className = "result-box error";
         resultDiv.innerHTML = "<strong>Erro:</strong> Digite um CEP com 8 números.";
         return;
     }
 
-    resultDiv.className = "result-box loading";
+    resultDiv.className = "result-box success";
     resultDiv.innerHTML = "<em>Consultando taxa de entrega...</em>";
 
-    const API_URL = "http://localhost:5253/api/frete"; 
-
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(API_FRETE_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ cepDestino: cepLimpo })
@@ -755,6 +754,7 @@ async function calcularFreteEDirecionar() {
         if (!response.ok) {
             freteCalculadoDaApi = 0;
             valorFreteGlobal = 0;
+            freteJaFoiCalculado = false;
             resultDiv.className = "result-box error";
             resultDiv.innerHTML = `<strong>Aviso:</strong> ${data.mensagem}`;
             return;
@@ -762,6 +762,7 @@ async function calcularFreteEDirecionar() {
 
         freteCalculadoDaApi = Number(data.valorFrete) || 0;
         valorFreteGlobal = freteCalculadoDaApi;
+        freteJaFoiCalculado = true;
         
         resultDiv.className = "result-box success";
         resultDiv.innerHTML = `
@@ -773,6 +774,7 @@ async function calcularFreteEDirecionar() {
     } catch (err) {
         freteCalculadoDaApi = 0;
         valorFreteGlobal = 0;
+        freteJaFoiCalculado = false;
         resultDiv.className = "result-box error";
         resultDiv.innerHTML = "<strong>Erro:</strong> Falha de conexão com a API de frete.";
     }
@@ -805,9 +807,15 @@ function finalizarWhatsApp() {
     const radioSelecionado = document.querySelector('input[name="tipo-entrega"]:checked');
     const ehEntrega = radioSelecionado && radioSelecionado.value === 'entrega';
 
+    if (ehEntrega && !freteJaFoiCalculado) {
+        alert("Por favor, digite seu CEP e clique em 'Calcular Frete' antes de finalizar a entrega!");
+        return;
+    }
+
     let taxaEntrega = ehEntrega ? valorFreteGlobal : 0;
     let tipoModo = ehEntrega ? "Entrega Personalizada" : "Retirada no Local";
     let totalGeral = subtotal + taxaEntrega;
+    const cepDestino = document.getElementById('postal-code')?.value || '';
 
     let mensagem = `*Olá, Pitadavivi! Gostaria de fazer o seguinte pedido:*\n\n`;
     
@@ -819,6 +827,7 @@ function finalizarWhatsApp() {
     mensagem += `\n*Modalidade:* ${tipoModo}`;
     
     if (ehEntrega) {
+        mensagem += `\n*CEP:* ${cepDestino}`;
         mensagem += `\n*Taxa de Entrega:* R$ ${taxaEntrega.toFixed(2).replace('.', ',')}`;
     }
 

@@ -54,39 +54,41 @@
                     </div>
 
                     <!-- ESCOLHA DA MODALIDADE (RETIRADA OU ENTREGA) -->
-                    <div class="delivery-mode-section" style="margin: 15px 0; padding: 10px; background: #fdfbf7; border-radius: 8px; border: 1px solid #e6dcc8;">
-                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #5a3e2b; font-size: 0.9rem;">📦 Como deseja receber o pedido?</label>
-                        <div style="display: flex; gap: 10px;">
-                            <label style="flex: 1; cursor: pointer; font-size: 0.85rem; padding: 8px; text-align: center; background: #fff9e6; border: 1px solid #d4a373; border-radius: 6px;" id="label-retirada">
-                                <input type="radio" name="tipo-entrega" value="retirada" checked onclick="alternarModalidade('retirada')"> Retirada
+                    <div class="delivery-mode-section">
+                        <span class="delivery-mode-title">📦 Como deseja receber o pedido?</span>
+                        <div class="delivery-mode-options">
+                            <label id="label-retirada" class="modality-pill">
+                                <input type="radio" name="tipo-entrega" value="retirada" checked onclick="alternarModalidade('retirada')">
+                                <span>Retirada</span>
                             </label>
-                            <label style="flex: 1; cursor: pointer; font-size: 0.85rem; padding: 8px; text-align: center; background: #fff; border: 1px solid #ccc; border-radius: 6px;" id="label-entrega">
-                                <input type="radio" name="tipo-entrega" value="entrega" onclick="alternarModalidade('entrega')"> Entrega
+                            <label id="label-entrega" class="modality-pill">
+                                <input type="radio" name="tipo-entrega" value="entrega" onclick="alternarModalidade('entrega')">
+                                <span>Entrega</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- AGENDAMENTO DE DATA -->
                     <div class="form-group-popover">
-                        <label for="delivery-date">📅 Data de Agendamento Entrega/ Retirada</label>
+                        <label for="delivery-date">📅 Data de Agendamento Entrega / Retirada</label>
                         <input type="date" id="delivery-date">
                     </div>
 
                     <!-- CALCULAR ENTREGA (Fica oculto por padrão se escolher Retirada) -->
                     <div id="bloco-calculo-frete" class="calc-delivery-section" style="display: none;">
-                        <label for="postal-code">Calcular Entrega</label>
+                        <label for="postal-code">Calcular Entrega (CEP)</label>
                         <input type="text" id="postal-code" placeholder="00000-000" maxlength="9">
                         
                         <div id="api-result" class="result-box"></div>
 
                         <button type="button" class="btn-action btn-calculate" onclick="calcularFreteEDirecionar()">
-                            Calcular
+                            Calcular Frete
                         </button>
                     </div>
 
                     <!-- BOTÃO FINALIZAR PELO WHATSAPP -->
                     <button class="btn-action btn-whatsapp" onclick="finalizarWhatsApp()">
-                        Finalizar por WhatsApp
+                        <i class="fab fa-whatsapp"></i> Finalizar por WhatsApp
                     </button>
                 </div>
             </div>
@@ -125,7 +127,7 @@
             <h2 class="section-title">Nossas Delícias</h2>
             <div class="products-grid">
 
-                <!-- 1. Pães (Com id="paes-card" para o direcionamento inteligente) -->
+                <!-- 1. Pães -->
                 <div class="product-card" id="paes-card">
                     <div class="product-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=500&q=80" alt="Pães" class="product-img">
@@ -307,12 +309,12 @@
     </div>
 
     <!-- RODAPÉ COMPLETO -->
-    <footer class="main-header" style="margin-top: 40px; padding: 30px 20px; text-align: center;">
+    <footer class="main-footer">
         <p>&copy; 2026 Pitadavivi Ltda. | Todos os direitos reservados.</p>
-        <div class="social-links" style="margin-top: 10px;">
-            <a href="https://www.instagram.com/pitadavivi" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: #fff; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/pitadavivi" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: #fff; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/5511987342562" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: #fff; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-links">
+            <a href="https://www.instagram.com/pitadavivi" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/pitadavivi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/5511987342562" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
 
